@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACHE by Julia Halupczok | Consultoría de Gestión</title>
+    
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            warmWhite: '#F7F6F3',
+                            softBlack: '#1C1C1A',
+                            smoke: '#7A7A78',
+                            taupe: '#A8A39D',
+                            yellow: '#EFE1B7',
+                            peach: '#F5D4CC',
+                            sage: '#DBE4B7',
+                            mint: '#E2ECCF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F7F6F3; color: #1C1C1A; overflow-x: hidden; }
+        
+        /* Smooth reveal general */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- ANIMACIÓN INTERACTIVA DE LA LETRA 'H' --- */
+        .h-interactive-container {
+            perspective: 1000px;
+        }
+        
+        .h-pillar {
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.8s ease;
+        }
+
+        .h-bridge {
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, width 0.6s ease;
+        }
+        
+        .h-content-reveal {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            transition-delay: 0.1s;
+        }
+
+        /* Estados de hover responsivos */
+        .group:hover .h-left-pillar { transform: translateX(-60px); background-color: #EFE1B7; }
+        .group:hover .h-right-pillar { transform: translateX(60px); background-color: #F5D4CC; }
+        
+        @media (min-width: 768px) {
+            .group:hover .h-left-pillar { transform: translateX(-100px); }
+            .group:hover .h-right-pillar { transform: translateX(100px); }
+        }
+        
+        @media (min-width: 1024px) {
+            .group:hover .h-left-pillar { transform: translateX(-140px); }
+            .group:hover .h-right-pillar { transform: translateX(140px); }
+        }
+
+        .group:hover .h-bridge { opacity: 0; transform: scaleX(0); }
+        .group:hover .h-content-reveal { opacity: 1; transform: translateY(0); }
+        .group:hover .h-hint { opacity: 0; }
+
+        /* Custom scrollbar adaptative & elegant */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #E3DACD; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #A8A39D; }
+
+        /* Carousel Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 1rem)); } /* -50% of the content + half gap */
+        }
+        .marquee-wrapper {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            /* fade out the edges */
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: flex;
+            gap: 2rem;
+            padding-right: 2rem;
+            animation: marquee 35s linear infinite;
+        }
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+        .review-card {
+            flex-shrink: 0;
+            width: 280px; 
+            white-space: normal;
+        }
+        @media (min-width: 768px) {
+            .review-card { width: 340px; }
+        }
+        
+        /* Fluid Pastel Background */
+        .fluid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -10;
+            background-color: #F7F6F3;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .fluid-bg::before,
+        .fluid-bg::after,
+        .fluid-blob-1,
+        .fluid-blob-2 {
+            content: '';
+            position: absolute;
+            filter: blur(90px);
+            opacity: 0.7;
+            border-radius: 50%;
+            animation: drift 25s infinite alternate ease-in-out;
+            pointer-events: none;
+            will-change: transform;
+        }
+        .fluid-blob-1 {
+            top: -15%;
+            right: -10%;
+            width: 75vw;
+            height: 75vw;
+            background: #F5D4CC; /* peach */
+            animation-delay: -5s;
+        }
+        .fluid-blob-2 {
+            bottom: -20%;
+            left: -15%;
+            width: 80vw;
+            height: 80vw;
+            background: #DBE4B7; /* sage */
+            animation-delay: -10s;
+        }
+        .fluid-bg::before {
+            top: 10%;
+            left: 10%;
+            width: 60vw;
+            height: 60vw;
+            background: #EFE1B7; /* yellow */
+            animation-delay: -15s;
+        }
+        .fluid-bg::after {
+            bottom: 5%;
+            right: 15%;
+            width: 55vw;
+            height: 55vw;
+            background: #E2ECCF; /* mint */
+        }
+        @keyframes drift {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            33% { transform: translate(6%, 8%) scale(1.05) rotate(3deg); }
+            66% { transform: translate(-5%, 6%) scale(0.95) rotate(-3deg); }
+            100% { transform: translate(4%, -4%) scale(1.02) rotate(1deg); }
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -9;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-peach selection:text-brand-softBlack font-sans text-brand-softBlack bg-transparent">
+
+<!-- Fluid Pastel Background Elements -->
+<div class="fluid-bg">
+    <div class="fluid-blob-1"></div>
+    <div class="fluid-blob-2"></div>
+</div>
+<div class="grain-overlay"></div>
+
+<!-- HERO SECTION: THE INTERACTIVE 'H' CENTRADA -->
+<section class="relative w-full min-h-[100svh] flex flex-col items-center justify-center p-6 overflow-hidden">
+    
+    <!-- Logo superior izquierdo -->
+    <div class="absolute top-8 left-8 md:top-12 md:left-12 z-50 flex items-center gap-6">
+        <h1 class="font-serif text-2xl font-medium tracking-tight">
+            HACHE
+        </h1>
+        <div class="flex flex-col gap-1 text-[10px] font-sans font-medium uppercase tracking-widest text-brand-smoke mt-1">
+            <button onclick="setLang('es')" id="btn-es" class="hover:text-brand-softBlack transition-colors text-left text-brand-softBlack font-bold">Español</button>
+            <button onclick="setLang('en')" id="btn-en" class="hover:text-brand-softBlack transition-colors text-left">Inglés</button>
+        </div>
+    </div>
+
+    <!-- EL ELEMENTO INTERACTIVO DE LA 'H' CENTRAL -->
+    <div class="relative w-48 h-64 md:w-64 md:h-[22rem] lg:w-[22rem] lg:h-[28rem] group cursor-pointer h-interactive-container flex items-center justify-center z-40" aria-label="Interactuar para descubrir HACHE">
+        
+        <!-- Estructura visual de la 'H' -->
+        <div class="h-pillar h-left-pillar absolute left-0 top-0 w-12 md:w-16 lg:w-20 h-full bg-brand-softBlack z-10 shadow-xl"></div>
+        <div class="h-pillar h-right-pillar absolute right-0 top-0 w-12 md:w-16 lg:w-20 h-full bg-brand-softBlack z-10 shadow-xl"></div>
+        <div class="h-bridge absolute top-1/2 left-0 w-full h-12 md:h-16 lg:h-20 -translate-y-1/2 bg-brand-softBlack z-10"></div>
+        
+        <!-- El concepto que se revela detrás de la letra -->
+        <div class="h-content-reveal absolute inset-0 flex items-center justify-center z-0 text-center px-12 md:px-16 lg:px-20 w-[160%] -ml-[30%]">
+            <div class="flex flex-col space-y-4 lg:space-y-6">
+                <span class="font-serif italic text-2xl md:text-3xl lg:text-4xl text-brand-softBlack leading-tight">La "h" no suena...</span>
+                <span class="font-sans text-[10px] md:text-xs lg:text-sm uppercase tracking-[0.25em] text-brand-taupe font-semibold">pero estructura las palabras.</span>
+                <div class="w-10 lg:w-16 h-px bg-brand-taupe mx-auto my-1 lg:my-2"></div>
+                <span class="font-sans text-xs md:text-sm lg:text-base text-brand-smoke max-w-[240px] lg:max-w-[320px] leading-relaxed">Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.</span>
+            </div>
+        </div>
+
+        <!-- Indicador de Interacción -->
+        <div class="h-hint absolute -bottom-20 md:-bottom-24 w-full text-center text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-semibold text-brand-taupe transition-opacity duration-300">
+            <span class="animate-pulse inline-block">( Pasar el cursor o tocar )</span>
+        </div>
+    </div>
+
+    <!-- Indicador de Scroll Inferior -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+        <div class="w-px h-16 md:h-24 bg-gradient-to-b from-brand-softBlack/30 to-transparent"></div>
+    </div>
+</section>
+
+<!-- MAIN CONTENT WRAPPER -->
+<main class="w-full max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+
+    <!-- EL TEXTO REEMPLAZADO REUBICADO CON MÁS FUERZA COMO INTRODUCCIÓN EDITORIAL -->
+    <section class="py-24 md:py-32 flex flex-col items-center text-center border-t border-brand-softBlack/5">
+        <p class="text-sm md:text-base uppercase tracking-[0.2em] font-semibold text-brand-smoke mb-6 reveal">(El Factor H)</p>
+        <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.4] tracking-tight mb-10 reveal max-w-4xl text-pretty">
+            "Dicen que la 'H' es muda, pero en consultoría, es la que más dice. Representa el factor Humano, ese que sostiene a las organizaciones cuando todo lo demás falla."
+        </h2>
+        
+        <div class="reveal" style="transition-delay: 100ms;">
+            <a href="https://wa.me/5492614708099" target="_blank" class="inline-flex items-center justify-center px-10 py-5 bg-brand-softBlack text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300">
+                Enviar WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION: EL PROBLEMA (Mapeo de Dolor) -->
+    <section class="py-24 border-t border-brand-softBlack/5">
+        <h3 class="font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 reveal flex items-center">
+            <span class="w-6 h-px bg-brand-taupe mr-4"></span>El Síntoma
+        </h3>
+        
+        <div class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-softBlack leading-snug max-w-3xl mb-20 reveal">
+            Tu empresa sigue creciendo, pero el día a día se rige por la <span class="italic bg-brand-yellow/50 px-2 lg:px-4">urgencia continua.</span>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div class="reveal bg-brand-yellow/60 p-8">
+                <i data-lucide="users" class="w-6 h-6 text-[#A58D3D] mb-6 stroke-[2.5]"></i>
+                <h4 class="text-xl font-serif font-medium mb-3">Concentración</h4>
+                <p class="text-brand-softBlack/80 font-light leading-relaxed text-sm">El funcionamiento crítico recae sobre unas pocas cabezas, generando un techo invisible de crecimiento.</p>
+            </div>
+            <div class="reveal bg-brand-peach/60 p-8" style="transition-delay: 100ms;">
+                <i data-lucide="git-branch" class="w-6 h-6 text-[#A06C5D] mb-6 stroke-[2.5]"></i>
+                <h4 class="text-xl font-serif font-medium mb-3">Fricción entre Áreas</h4>
+                <p class="text-brand-softBlack/80 font-light leading-relaxed text-sm">La información se quiebra entre sectores fundacionales. Falta fluidez y visión compartida.</p>
+            </div>
+            <div class="reveal bg-brand-sage/60 p-8" style="transition-delay: 200ms;">
+                <i data-lucide="folder-search" class="w-6 h-6 text-[#757F4D] mb-6 stroke-[2.5]"></i>
+                <h4 class="text-xl font-serif font-medium mb-3">Sin Protocolo</h4>
+                <p class="text-brand-softBlack/80 font-light leading-relaxed text-sm">El equipo trabaja arduamente, pero sin una documentación accionable que les permita autonomía real.</p>
+            </div>
+            <div class="reveal bg-brand-mint/60 p-8" style="transition-delay: 300ms;">
+                <i data-lucide="pie-chart" class="w-6 h-6 text-[#758455] mb-6 stroke-[2.5]"></i>
+                <h4 class="text-xl font-serif font-medium mb-3">Datos Ciegos</h4>
+                <p class="text-brand-softBlack/80 font-light leading-relaxed text-sm">Sobra información dispersa, pero faltan indicadores consolidados para basar las decisiones estratégicas y financieras.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: LA SOLUCION (Estructura Editorial) -->
+    <section class="py-24 border-t border-brand-softBlack/5">
+        <h3 class="font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-20 reveal flex items-center">
+            <span class="w-6 h-px bg-brand-taupe mr-4"></span>Las Bases
+        </h3>
+        
+        <div class="grid lg:grid-cols-3 gap-6">
+            <!-- Servicio 1 -->
+            <div class="group reveal cursor-default bg-brand-yellow/60 p-8 lg:p-10 transition-all hover:bg-brand-yellow/80 hover:-translate-y-1">
+                <div class="text-[#A58D3D] font-serif italic text-2xl mb-8">01.</div>
+                <div>
+                    <h4 class="text-3xl font-serif mb-4">Diagnóstico de Gestión</h4>
+                    <p class="text-brand-softBlack/80 font-light leading-relaxed text-lg">Evaluamos la empresa como un todo orgánico. Identificamos las raíces del desorden, los problemas ocultos y las debilidades numéricas para obtener una foto real, sin filtro.</p>
+                </div>
+            </div>
+            
+            <!-- Servicio 2 -->
+            <div class="group reveal cursor-default bg-brand-peach/60 p-8 lg:p-10 transition-all hover:bg-brand-peach/80 hover:-translate-y-1" style="transition-delay: 100ms;">
+                <div class="text-[#A06C5D] font-serif italic text-2xl mb-8">02.</div>
+                <div>
+                    <h4 class="text-3xl font-serif mb-4">Optimización Operativa</h4>
+                    <p class="text-brand-softBlack/80 font-light leading-relaxed text-lg">Simplificamos circuitos complejos y creamos flujos de coordinación directos. Documentación táctica que todo tu equipo logra leer e instrumentar orgánicamente en la diaria.</p>
+                </div>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="group reveal cursor-default bg-brand-sage/60 p-8 lg:p-10 transition-all hover:bg-brand-sage/80 hover:-translate-y-1" style="transition-delay: 200ms;">
+                <div class="text-[#757F4D] font-serif italic text-2xl mb-8">03.</div>
+                <div>
+                    <h4 class="text-3xl font-serif mb-4">Escala Estratégica</h4>
+                    <p class="text-brand-softBlack/80 font-light leading-relaxed text-lg">Trabajamos codo a codo en la fase de implementación. Garantizamos que el cambio estructural transite suavemente, aportando el seguimiento de control al nivel directivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: AUTORIDAD / SOBRE JULIA (Revista Vibe) -->
+    <section id="experiencia" class="py-24 md:py-32 border-t border-brand-softBlack/5">
+        <h3 class="font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 md:mb-24 reveal flex items-center">
+            <span class="w-6 h-px bg-brand-taupe mr-4"></span>La Directora
+        </h3>
+
+        <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+            
+            <div class="lg:w-2/5 w-full order-2 lg:order-1 reveal">
+                <div class="aspect-[3/4] w-full relative group overflow-hidden border border-brand-softBlack/5 shadow-sm">
+                    <div class="absolute inset-0 bg-[#EFE1B7]"></div>
+                    <div class="absolute inset-0 bg-[url('/julia.jpg')] bg-cover bg-center mix-blend-luminosity opacity-90 group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-[1.5s]"></div>
+                    <div class="absolute inset-x-8 bottom-8 text-white">
+                        <span class="font-serif text-3xl italic block mb-2">Julia.</span>
+                        <span class="font-sans text-xs uppercase tracking-widest font-medium">Fundadora de Hache</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-3/5 w-full order-1 lg:order-2 self-center reveal">
+                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-softBlack leading-[1.15] mb-10">
+                    "Entiendo el caos de crecer rápido, porque experimenté esos procesos trabajando inmersa en la <span class="italic text-brand-taupe">industria real.</span>"
+                </h2>
+                
+                <div class="space-y-6 text-brand-smoke font-light text-lg leading-relaxed mb-12">
+                    <p>No aplico análisis corporativos estandarizados. Mi propuesta de valor radica en un equilibrio muy fino entre rigurosidad analítica y una mirada genuinamente abocada a las personas que operan el negocio.</p>
+                    <p>Principalmente en industrias donde interviene la historia, las viñas, las bodegas y la producción física a escala comercial, las consultoras externas suelen carecer de la sensibilidad necesaria para conectar a quienes envasan con quienes auditan.</p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-5 py-3 border border-brand-softBlack/15 text-brand-softBlack rounded-full">Vitivinicultura</span>
+                    <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-5 py-3 border border-brand-softBlack/15 text-brand-softBlack rounded-full">Producción</span>
+                    <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-5 py-3 bg-brand-softBlack text-white rounded-full">PYMEs Familiares</span>
+                </div>
+
+                <a href="https://www.linkedin.com/in/julia-halupczok/" target="_blank" class="inline-flex items-center text-xs uppercase tracking-widest font-semibold hover:text-brand-taupe transition-colors pb-1 border-b border-brand-softBlack/20 hover:border-brand-taupe group">
+                    Ver LinkedIn <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: TESTIMONIOS EDITORIALES -->
+    <section class="py-24 border-t border-brand-softBlack/5">
+        <h3 class="font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 reveal flex items-center">
+            <span class="w-6 h-px bg-brand-taupe mr-4"></span>Impacto
+        </h3>
+        
+        <div class="reveal -mx-4 md:-mx-8 lg:-mx-12 overflow-hidden">
+            <div class="marquee-wrapper py-4">
+                <div class="marquee-content">
+                    
+                    <!-- Set 1 -->
+                    <!-- Review 1 -->
+                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-yellow/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5">
+                        <span class="text-brand-yellow text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
+                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                            Crecimos de golpe y todo dependía de mí. Julia logró mapear procesos con una empatía enorme hacia los empleados. Nos dio el orden técnico para delegar con paz.
+                        </p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <div class="w-6 h-px bg-brand-taupe"></div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Director Empresarial</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Empresa Familiar, Mendoza</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-peach/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5">
+                        <span class="text-brand-peach text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
+                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                            Habitualmente te dejan un manual que se empolva. Ella estructuró circuitos reales y accionables. Por primera vez Producción y Finanzas se entienden.
+                        </p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <div class="w-6 h-px bg-brand-taupe"></div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Gerencia de Operaciones</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Bodega Boutique</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-sage/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5">
+                        <span class="text-brand-sage text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
+                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                            Logramos bajar a tierra procedimientos que estaban en la cabeza de los fundadores. La claridad que aportó a la empresa es invaluable.
+                        </p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <div class="w-6 h-px bg-brand-taupe"></div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Gerencia Administrativa</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">PYME de Servicios</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-mint/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5">
+                        <span class="text-brand-mint text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
+                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                            Transformó el caos de la temporada alta en un flujo de trabajo predecible. Ahora basamos decisiones en datos, no en intuición.
+                        </p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <div class="w-6 h-px bg-brand-taupe"></div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Jefatura de Planta</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Industria Manufacturera</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Set 2 (Duplicate for infinite scroll) -->
+                    <!-- Review 1 -->
+                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-yellow/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5" aria-hidden="true">
+                        <span class="text-brand-yellow text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
+                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                            Crecimos de golpe y todo dependía de mí. Julia logró mapear procesos con una empatía enorme hacia los empleados. Nos dio el orden técnico para delegar con paz.
+                        </p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <div class="w-6 h-px bg-brand-taupe"></div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Director Empresarial</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Empresa Familiar, Mendoza</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-peach/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5" aria-hidden="true">
+                        <span class="text-brand-peach text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
+                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                            Habitualmente te dejan un manual que se empolva. Ella estructuró circuitos reales y accionables. Por primera vez Producción y Finanzas se entienden.
+                        </p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <div class="w-6 h-px bg-brand-taupe"></div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Gerencia de Operaciones</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Bodega Boutique</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-sage/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5" aria-hidden="true">
+                        <span class="text-brand-sage text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
+                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                            Logramos bajar a tierra procedimientos que estaban en la cabeza de los fundadores. La claridad que aportó a la empresa es invaluable.
+                        </p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <div class="w-6 h-px bg-brand-taupe"></div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Gerencia Administrativa</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">PYME de Servicios</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-mint/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5" aria-hidden="true">
+                        <span class="text-brand-mint text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
+                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                            Transformó el caos de la temporada alta en un flujo de trabajo predecible. Ahora basamos decisiones en datos, no en intuición.
+                        </p>
+                        <div class="flex items-center gap-4 mt-auto">
+                            <div class="w-6 h-px bg-brand-taupe"></div>
+                            <div>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Jefatura de Planta</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Industria Manufacturera</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FINAL CTA -->
+    <section id="contacto" class="py-32 md:py-40 border-t border-brand-softBlack/10">
+        <div class="reveal text-center mx-auto max-w-4xl">
+            <p class="text-2xl md:text-3xl text-brand-softBlack font-light mb-12 leading-relaxed max-w-3xl mx-auto">
+                Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="https://wa.me/5492614708099" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-brand-softBlack text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300 text-center shadow-xl shadow-brand-softBlack/10">
+                    Contacto por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-brand-softBlack/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div>
+            <span class="font-serif text-2xl tracking-tight block">HACHE.</span>
+            <p id="footer-text-1" class="text-xs text-brand-smoke font-light mt-2">© 2024 Julia Halupczok. Consultoría Estratégica.</p>
+            <p id="footer-text-2" class="text-xs text-brand-smoke font-light mt-1">Powered by <a href="http://www.rubra.ar" target="_blank" class="hover:text-brand-softBlack transition-colors underline decoration-brand-smoke/30 underline-offset-4">RUBRAlab</a></p>
+        </div>
+        
+        <div class="flex gap-8">
+            <a id="footer-link-1" href="https://www.linkedin.com/in/julia-halupczok/" target="_blank" class="text-[10px] uppercase tracking-widest font-medium text-brand-smoke hover:text-brand-softBlack transition-colors">LinkedIn</a>
+            <a id="footer-link-2" href="mailto:juliahylux@gmail.com" class="text-[10px] uppercase tracking-widest font-medium text-brand-smoke hover:text-brand-softBlack transition-colors">Email</a>
+        </div>
+    </footer>
+
+</main>
+
+<script>
+    lucide.createIcons();
+
+    // Intersection Observer para disparar animaciones de scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOptions = { rootMargin: "0px 0px -75px 0px" };
+
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => revealOnScroll.observe(el));
+</script>
+<script src="/lang.js"></script>
+
+</body>
+</html>
