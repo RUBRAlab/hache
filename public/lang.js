@@ -1,7 +1,7 @@
 const translations = {
     es: {
         "La \"h\" no suena...": "La \"h\" no suena...",
-        "pero estructura las palabras.": "pero estructura las palabras.",
+        "pero da forma a las palabras.": "pero da forma a las palabras.",
         "Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.": "Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.",
         "( Pasar el cursor o tocar )": "( Pasar el cursor o tocar )",
         "(El Factor H)": "(El Factor H)",
@@ -55,7 +55,7 @@ const translations = {
     },
     en: {
         "La \"h\" no suena...": "The \"h\" is silent...",
-        "pero estructura las palabras.": "but it structures the words.",
+        "pero da forma a las palabras.": "but it shapes the words.",
         "Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.": "Exactly like our processes. They organize, connect, and structure your company, even if they operate in silence.",
         "( Pasar el cursor o tocar )": "( Hover or tap )",
         "(El Factor H)": "(The H Factor)",
