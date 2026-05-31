@@ -51,6 +51,18 @@ const translations = {
         "Industria Manufacturera": "Industria Manufacturera",
         "Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.": "Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.",
         "Contacto por WhatsApp": "Contacto por WhatsApp",
+        "Consulta gratis": "Consulta gratis",
+        "(Primer Paso)": "(Primer Paso)",
+        "Nombre completo *": "Nombre completo *",
+        "Empresa / Negocio *": "Empresa / Negocio *",
+        "¿Cuál es tu principal necesidad hoy? *": "¿Cuál es tu principal necesidad hoy? *",
+        "WhatsApp o teléfono *": "WhatsApp o teléfono *",
+        "Email *": "Email *",
+        "Enviando...": "Enviando...",
+        "¡Gracias! Te contactamos en menos de 72 horas.": "¡Gracias! Te contactamos en menos de 72 horas.",
+        "Hubo un error. ": "Hubo un error. ",
+        "Escribinos por WhatsApp.": "Escribinos por WhatsApp.",
+        "O si preferís escribir directamente": "O si preferís escribir directamente",
         "Consultoría Estratégica.": "Consultoría Estratégica."
     },
     en: {
@@ -105,6 +117,18 @@ const translations = {
         "Industria Manufacturera": "Manufacturing Industry",
         "Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.": "Let's do a quick initial diagnosis. Let's talk about the blind spots of your internal operations and find the pillars of order for the next level.",
         "Contacto por WhatsApp": "Contact via WhatsApp",
+        "Consulta gratis": "Free consultation",
+        "(Primer Paso)": "(First Step)",
+        "Nombre completo *": "Full name *",
+        "Empresa / Negocio *": "Company / Business *",
+        "¿Cuál es tu principal necesidad hoy? *": "What is your main need today? *",
+        "WhatsApp o teléfono *": "WhatsApp or phone *",
+        "Email *": "Email *",
+        "Enviando...": "Sending...",
+        "¡Gracias! Te contactamos en menos de 72 horas.": "Thank you! We'll be in touch within 72 hours.",
+        "Hubo un error. ": "There was an error. ",
+        "Escribinos por WhatsApp.": "Message us on WhatsApp.",
+        "O si preferís escribir directamente": "Or if you prefer to write directly",
         "Consultoría Estratégica.": "Strategic Consulting."
     }
 };

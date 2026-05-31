@@ -265,9 +265,12 @@
             "Dicen que la 'H' es muda, pero en consultoría, es la que más dice. Representa el factor Humano, ese que sostiene a las organizaciones cuando todo lo demás falla."
         </h2>
         
-        <div class="reveal" style="transition-delay: 100ms;">
+        <div class="reveal flex flex-col sm:flex-row gap-4 justify-center" style="transition-delay: 100ms;">
             <a href="https://wa.me/5492614708099" target="_blank" class="inline-flex items-center justify-center px-10 py-5 bg-brand-softBlack text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300">
                 Enviar WhatsApp
+            </a>
+            <a href="#contacto" class="inline-flex items-center justify-center px-10 py-5 border-2 border-brand-softBlack text-brand-softBlack uppercase text-xs tracking-widest font-semibold hover:bg-brand-softBlack hover:text-white transition-colors duration-300">
+                Consulta gratis
             </a>
         </div>
     </section>
@@ -522,20 +525,128 @@
         </div>
     </section>
 
-    <!-- SECTION: FINAL CTA -->
+    <!-- SECTION: FORMULARIO DE CONTACTO -->
     <section id="contacto" class="py-32 md:py-40 border-t border-brand-softBlack/10">
-        <div class="reveal text-center mx-auto max-w-4xl">
-            <p class="text-2xl md:text-3xl text-brand-softBlack font-light mb-12 leading-relaxed max-w-3xl mx-auto">
+        <div class="reveal text-center mx-auto max-w-4xl mb-12">
+            <p class="text-sm md:text-base uppercase tracking-[0.2em] font-semibold text-brand-smoke mb-4">(Primer Paso)</p>
+            <p class="text-2xl md:text-3xl text-brand-softBlack font-light leading-relaxed max-w-3xl mx-auto">
                 Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.
             </p>
+        </div>
 
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="https://wa.me/5492614708099" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-brand-softBlack text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300 text-center shadow-xl shadow-brand-softBlack/10">
+        <!-- Formulario -->
+        <div class="reveal mx-auto max-w-lg" style="transition-delay: 100ms;">
+            <form id="contact-form" class="flex flex-col gap-5" novalidate>
+                <div class="flex flex-col gap-1.5">
+                    <label for="f-nombre" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">Nombre completo *</label>
+                    <input id="f-nombre" name="nombre" type="text" required placeholder="Julia Halupczok"
+                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="f-empresa" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">Empresa / Negocio *</label>
+                    <input id="f-empresa" name="empresa" type="text" required placeholder="Bodega Los Andes"
+                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="f-necesidad" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">¿Cuál es tu principal necesidad hoy? *</label>
+                    <input id="f-necesidad" name="necesidad" type="text" required placeholder="Organizar procesos internos del equipo"
+                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="f-whatsapp" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">WhatsApp o teléfono *</label>
+                    <input id="f-whatsapp" name="whatsapp" type="tel" required placeholder="+54 9 261 000 0000"
+                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="f-email" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">Email *</label>
+                    <input id="f-email" name="email" type="email" required placeholder="julia@bodegalosandes.com"
+                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
+                </div>
+
+                <!-- Botón submit -->
+                <button type="submit" id="form-submit-btn"
+                    class="mt-2 w-full flex items-center justify-center gap-3 px-10 py-5 bg-brand-softBlack text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed shadow-xl shadow-brand-softBlack/10">
+                    <span id="form-btn-text">Consulta gratis</span>
+                    <i data-lucide="send" id="form-btn-icon" class="w-3.5 h-3.5 stroke-[2.5]"></i>
+                    <svg id="form-btn-spinner" class="hidden animate-spin w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                    </svg>
+                </button>
+
+                <!-- Mensajes de estado -->
+                <p id="form-success" class="hidden text-center text-sm font-medium text-[#5A7A3A] bg-brand-sage/40 px-6 py-4 border border-brand-sage">
+                    ¡Gracias! Te contactamos en menos de 72 horas.
+                </p>
+                <p id="form-error" class="hidden text-center text-sm font-medium text-[#8B3A3A] bg-brand-peach/40 px-6 py-4 border border-brand-peach">
+                    Hubo un error. <a href="https://wa.me/5492614708099" target="_blank" class="underline">Escribinos por WhatsApp.</a>
+                </p>
+            </form>
+
+            <!-- WhatsApp alternativo -->
+            <div class="mt-10 pt-8 border-t border-brand-softBlack/10 text-center">
+                <p class="text-[10px] uppercase tracking-widest font-medium text-brand-taupe mb-4">O si preferís escribir directamente</p>
+                <a href="https://wa.me/5492614708099" target="_blank" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-brand-smoke hover:text-brand-softBlack transition-colors pb-1 border-b border-brand-softBlack/20 hover:border-brand-softBlack">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
                     Contacto por WhatsApp
                 </a>
             </div>
         </div>
     </section>
+
+    <script>
+        (function() {
+            var WEBHOOK_URL = 'https://rubra.app.n8n.cloud/webhook/hache-contacto';
+
+            var form = document.getElementById('contact-form');
+            var submitBtn = document.getElementById('form-submit-btn');
+            var btnText = document.getElementById('form-btn-text');
+            var btnIcon = document.getElementById('form-btn-icon');
+            var btnSpinner = document.getElementById('form-btn-spinner');
+            var successMsg = document.getElementById('form-success');
+            var errorMsg = document.getElementById('form-error');
+
+            function setLoading(loading) {
+                submitBtn.disabled = loading;
+                form.querySelectorAll('input').forEach(function(el) { el.disabled = loading; });
+                btnText.textContent = loading ? 'Enviando...' : 'Consulta gratis';
+                btnIcon.classList.toggle('hidden', loading);
+                btnSpinner.classList.toggle('hidden', !loading);
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                successMsg.classList.add('hidden');
+                errorMsg.classList.add('hidden');
+
+                var nombre = document.getElementById('f-nombre').value.trim();
+                var empresa = document.getElementById('f-empresa').value.trim();
+                var necesidad = document.getElementById('f-necesidad').value.trim();
+                var whatsapp = document.getElementById('f-whatsapp').value.trim();
+                var email = document.getElementById('f-email').value.trim();
+
+                if (!nombre || !empresa || !necesidad || !whatsapp || !email) return;
+
+                setLoading(true);
+
+                fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre: nombre, empresa: empresa, necesidad: necesidad, whatsapp: whatsapp, email: email })
+                })
+                .then(function(res) {
+                    if (!res.ok) throw new Error('Error ' + res.status);
+                    setLoading(false);
+                    form.reset();
+                    successMsg.classList.remove('hidden');
+                })
+                .catch(function() {
+                    setLoading(false);
+                    errorMsg.classList.remove('hidden');
+                });
+            });
+        })();
+    </script>
 
     <!-- FOOTER -->
     <footer class="py-12 border-t border-brand-softBlack/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
