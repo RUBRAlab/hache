@@ -26,7 +26,7 @@ Body enviado: `{ nombre, empresa, necesidad, whatsapp, email }`
 Botón: "Consulta gratis" con ícono `send` de Lucide
 
 ## Webhook n8n
-URL: `https://rubra.app.n8n.cloud/webhook/hache-contacto`
+URL: `https://n8n-production-ac060.up.railway.app/webhook/hache-contacto`
 Variable: `VITE_N8N_WEBHOOK_URL` en `.env.local` y en Vercel → Settings → Environment Variables → Production
 Nota: el webhook URL está hardcodeado en el script inline de index.html (Vite no transforma import.meta.env en scripts inline de HTML)
 
