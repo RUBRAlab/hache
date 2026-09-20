@@ -22,21 +22,42 @@ if (header) {
 }
 
 /* ------------------------------------------------------- reveals al scroll */
-const revealEls = document.querySelectorAll('.reveal');
-if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-  revealEls.forEach((el) => el.classList.add('active'));
+/* Un IntersectionObserver no alcanza: cuando el scroll pega un salto grande
+ * (clic en "Consulta gratis", un ancla, buscar en la página) los elementos
+ * pasan de abajo a arriba del viewport dentro del mismo frame, nunca llegan a
+ * intersecar y quedan en opacity 0 para siempre. Barremos por posición, que es
+ * determinístico y no se puede saltear nada. */
+let pendientes = [...document.querySelectorAll('.reveal')];
+
+function barrerReveals() {
+  pendientes = pendientes.filter((el) => {
+    if (el.getBoundingClientRect().top >= window.innerHeight - 75) return true;
+    el.classList.add('active');
+    return false;
+  });
+  if (!pendientes.length) {
+    removeEventListener('scroll', alHacerScroll);
+    removeEventListener('resize', barrerReveals);
+  }
+}
+
+let esperandoFrame = false;
+function alHacerScroll() {
+  if (esperandoFrame) return;
+  esperandoFrame = true;
+  requestAnimationFrame(() => {
+    esperandoFrame = false;
+    barrerReveals();
+  });
+}
+
+if (prefersReducedMotion) {
+  pendientes.forEach((el) => el.classList.add('active'));
+  pendientes = [];
 } else {
-  const io = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('active');
-        obs.unobserve(entry.target);
-      });
-    },
-    { rootMargin: '0px 0px -75px 0px' },
-  );
-  revealEls.forEach((el) => io.observe(el));
+  barrerReveals();
+  addEventListener('scroll', alHacerScroll, { passive: true });
+  addEventListener('resize', barrerReveals);
 }
 
 /* ------------------------------------------------------ monograma H */

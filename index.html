@@ -70,6 +70,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- Marca que hay JS antes del primer pintado: los reveals arrancan en
+         opacity 0 y sin esto el sitio quedaría en blanco si el script falla. -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="antialiased selection:bg-brand-peach selection:text-brand-soft-black font-sans text-brand-soft-black">
 

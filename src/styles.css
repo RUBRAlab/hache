@@ -64,14 +64,16 @@
 }
 
 /* ---------------------------------------------------------------- reveals */
-.reveal {
+/* Condicionado a .js (que se agrega en el <head>): sin JavaScript el contenido
+   se ve igual en vez de quedar invisible. */
+.js .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition:
     opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1),
     transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.reveal.active {
+.js .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -329,7 +331,7 @@
   html {
     scroll-behavior: auto;
   }
-  .reveal {
+  .js .reveal {
     opacity: 1;
     transform: none;
     transition: none;
