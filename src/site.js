@@ -89,15 +89,28 @@ if (marquee && !window.matchMedia('(hover: hover) and (pointer: fine)').matches)
 /* ---------------------------------------------- WhatsApp flotante */
 const waFloat = document.getElementById('wa-float');
 const contacto = document.getElementById('contacto');
-if (waFloat && contacto && 'IntersectionObserver' in window) {
-  // Estorba justo donde ya está el formulario.
-  new IntersectionObserver(
-    ([entry]) => {
-      waFloat.classList.toggle('opacity-0', entry.isIntersecting);
-      waFloat.classList.toggle('pointer-events-none', entry.isIntersecting);
-    },
-    { threshold: 0.15 },
-  ).observe(contacto);
+if (waFloat) {
+  // Estorba en dos lugares: sobre el hero, que ya tiene su botón de WhatsApp
+  // justo debajo, y sobre el formulario de contacto.
+  let enContacto = false;
+
+  const syncWaFloat = () => {
+    const pasoElHero = window.scrollY > window.innerHeight * 0.85;
+    waFloat.classList.toggle('is-visible', pasoElHero && !enContacto);
+  };
+
+  if (contacto && 'IntersectionObserver' in window) {
+    new IntersectionObserver(
+      ([entry]) => {
+        enContacto = entry.isIntersecting;
+        syncWaFloat();
+      },
+      { threshold: 0.15 },
+    ).observe(contacto);
+  }
+
+  syncWaFloat();
+  addEventListener('scroll', syncWaFloat, { passive: true });
 }
 
 /* ------------------------------------------------------------ formulario */

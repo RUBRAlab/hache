@@ -107,18 +107,21 @@
 </header>
 
 <!-- HERO -->
-<section class="relative w-full min-h-svh flex flex-col items-center justify-center gap-14 md:gap-16 px-6 pt-32 pb-28 text-center">
+<section class="relative w-full min-h-svh flex flex-col items-center justify-center gap-12 md:gap-16 px-6 pt-28 md:pt-32 pb-24 md:pb-28 text-center">
 
     <!-- Monograma H interactivo. El texto revelado vive fuera del <button> para
          que los lectores de pantalla puedan leerlo en lugar de solo el rótulo. -->
     <div id="h-mark" class="h-mark relative w-40 h-56 md:w-52 md:h-72 lg:w-60 lg:h-[22rem] flex items-center justify-center shrink-0">
 
-        <div id="h-reveal" class="h-reveal absolute inset-0 flex items-center justify-center z-0 text-center w-[190%] -ml-[45%]">
-            <div class="flex flex-col gap-4 lg:gap-5">
-                <p data-i18n="h.line1" class="font-serif italic text-2xl md:text-3xl lg:text-4xl text-brand-soft-black leading-tight">La "h" no suena...</p>
-                <p data-i18n="h.line2" class="font-sans text-[11px] md:text-xs lg:text-sm uppercase tracking-[0.25em] text-brand-taupe font-semibold">pero da forma a las palabras.</p>
+        <!-- El ancho de cada breakpoint es el hueco que dejan los pilares al
+             separarse (±60 / ±100 / ±140 px). Si se agranda, el texto queda
+             tapado por los pilares. -->
+        <div id="h-reveal" class="h-reveal absolute inset-0 flex items-center justify-center z-0 text-center">
+            <div class="flex flex-col gap-3 lg:gap-5 w-[196px] md:w-[288px] lg:w-[380px]">
+                <p data-i18n="h.line1" class="font-serif italic text-xl md:text-3xl lg:text-4xl text-brand-soft-black leading-tight">La "h" no suena...</p>
+                <p data-i18n="h.line2" class="font-sans text-[10px] md:text-xs lg:text-sm uppercase tracking-[0.2em] lg:tracking-[0.25em] text-brand-taupe font-semibold">pero da forma a las palabras.</p>
                 <span class="w-10 lg:w-16 h-px bg-brand-line mx-auto" aria-hidden="true"></span>
-                <p data-i18n="h.body" class="font-sans text-sm lg:text-base text-brand-smoke max-w-[260px] lg:max-w-[320px] leading-relaxed mx-auto">Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.</p>
+                <p data-i18n="h.body" class="font-sans text-xs md:text-sm lg:text-base text-brand-smoke leading-relaxed">Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.</p>
             </div>
         </div>
 
@@ -130,7 +133,7 @@
             data-i18n-aria="a11y.hMark" aria-label="Descubrir el significado de la H"
             class="absolute inset-0 z-20 cursor-pointer"></button>
 
-        <span class="h-hint absolute -bottom-12 inset-x-0 text-[11px] uppercase tracking-[0.25em] font-semibold text-brand-taupe">
+        <span class="h-hint absolute -bottom-12 left-1/2 -translate-x-1/2 w-max whitespace-nowrap text-[11px] uppercase tracking-[0.25em] font-semibold text-brand-taupe">
             <span data-i18n="hero.hint" class="animate-pulse inline-block">( Pasar el cursor o tocar )</span>
         </span>
     </div>
@@ -461,7 +464,7 @@
 <!-- WhatsApp flotante -->
 <a id="wa-float" href="https://wa.me/5492614708099" target="_blank" rel="noopener"
     data-i18n-aria="a11y.waFloat" aria-label="Escribir por WhatsApp"
-    class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand-soft-black text-white flex items-center justify-center shadow-xl shadow-brand-soft-black/20 hover:bg-brand-taupe transition-all duration-300">
+    class="wa-float fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand-soft-black text-white flex items-center justify-center shadow-xl shadow-brand-soft-black/20 hover:bg-brand-taupe">
     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
 </a>
 

@@ -294,6 +294,24 @@
   box-shadow: 0 1px 0 rgb(28 28 26 / 0.08);
 }
 
+/* -------------------------------------------------- WhatsApp flotante */
+/* Oculto sobre el hero (que ya tiene su propio botón de WhatsApp, y el
+   flotante se le montaba encima) y sobre el formulario de contacto. */
+.wa-float {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+.wa-float.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
 /* ------------------------------------------------------------- formulario */
 .field-error {
   display: none;
