@@ -1,191 +1,301 @@
+/* Traducciones del sitio de Julia H.
+ *
+ * Cada cadena traducible lleva en el HTML un atributo:
+ *   data-i18n="clave"              -> reemplaza el texto del elemento
+ *   data-i18n-placeholder="clave"  -> reemplaza el placeholder
+ *   data-i18n-aria="clave"         -> reemplaza el aria-label
+ *   data-i18n-alt="clave"          -> reemplaza el alt
+ *
+ * Al agregar o cambiar un texto del sitio hay que agregar la clave en `es` y
+ * en `en`. Si falta en `en`, se muestra el español.
+ */
+
 const translations = {
-    es: {
-        "La \"h\" no suena...": "La \"h\" no suena...",
-        "pero da forma a las palabras.": "pero da forma a las palabras.",
-        "Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.": "Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.",
-        "( Pasar el cursor o tocar )": "( Pasar el cursor o tocar )",
-        "(El Factor H)": "(El Factor H)",
-        "\"Dicen que la 'H' es muda, pero en consultoría, es la que más dice. Representa el factor Humano, ese que sostiene a las organizaciones cuando todo lo demás falla.\"": "\"Dicen que la 'H' es muda, pero en consultoría, es la que más dice. Representa el factor Humano, ese que sostiene a las organizaciones cuando todo lo demás falla.\"",
-        "Enviar WhatsApp": "Enviar WhatsApp",
-        "El Síntoma": "El Síntoma",
-        "Tu empresa sigue creciendo, pero el día a día se rige por la": "Tu empresa sigue creciendo, pero el día a día se rige por la",
-        "urgencia continua.": "urgencia continua.",
-        "Concentración": "Concentración",
-        "El funcionamiento crítico recae sobre unas pocas cabezas, generando un techo invisible de crecimiento.": "El funcionamiento crítico recae sobre unas pocas cabezas, generando un techo invisible de crecimiento.",
-        "Fricción entre Áreas": "Fricción entre Áreas",
-        "La información se quiebra entre sectores fundacionales. Falta fluidez y visión compartida.": "La información se quiebra entre sectores fundacionales. Falta fluidez y visión compartida.",
-        "Sin Protocolo": "Sin Protocolo",
-        "El equipo trabaja arduamente, pero sin una documentación accionable que les permita autonomía real.": "El equipo trabaja arduamente, pero sin una documentación accionable que les permita autonomía real.",
-        "Datos Ciegos": "Datos Ciegos",
-        "Sobra información dispersa, pero faltan indicadores consolidados para basar las decisiones estratégicas y financieras.": "Sobra información dispersa, pero faltan indicadores consolidados para basar las decisiones estratégicas y financieras.",
-        "Las Bases": "Las Bases",
-        "Diagnóstico de Gestión": "Diagnóstico de Gestión",
-        "Evaluamos la empresa como un todo orgánico. Identificamos las raíces del desorden, los problemas ocultos y las debilidades numéricas para obtener una foto real, sin filtro.": "Evaluamos la empresa como un todo orgánico. Identificamos las raíces del desorden, los problemas ocultos y las debilidades numéricas para obtener una foto real, sin filtro.",
-        "Optimización Operativa": "Optimización Operativa",
-        "Simplificamos circuitos complejos y creamos flujos de coordinación directos. Documentación táctica que todo tu equipo logra leer e instrumentar orgánicamente en la diaria.": "Simplificamos circuitos complejos y creamos flujos de coordinación directos. Documentación táctica que todo tu equipo logra leer e instrumentar orgánicamente en la diaria.",
-        "Escala Estratégica": "Escala Estratégica",
-        "Trabajamos codo a codo en la fase de implementación. Garantizamos que el cambio estructural transite suavemente, aportando el seguimiento de control al nivel directivo.": "Trabajamos codo a codo en la fase de implementación. Garantizamos que el cambio estructural transite suavemente, aportando el seguimiento de control al nivel directivo.",
-        "La Directora": "La Directora",
-        "Fundadora de Hache": "Fundadora de Hache",
-        "\"Entiendo el caos de crecer rápido, porque experimenté esos procesos trabajando inmersa en la": "\"Entiendo el caos de crecer rápido, porque experimenté esos procesos trabajando inmersa en la",
-        "industria real.": "industria real.",
-        "\"": "\"",
-        "No aplico análisis corporativos estandarizados. Mi propuesta de valor radica en un equilibrio muy fino entre rigurosidad analítica y una mirada genuinamente abocada a las personas que operan el negocio.": "No aplico análisis corporativos estandarizados. Mi propuesta de valor radica en un equilibrio muy fino entre rigurosidad analítica y una mirada genuinamente abocada a las personas que operan el negocio.",
-        "Principalmente en industrias donde interviene la historia, las viñas, las bodegas y la producción física a escala comercial, las consultoras externas suelen carecer de la sensibilidad necesaria para conectar a quienes envasan con quienes auditan.": "Principalmente en industrias donde interviene la historia, las viñas, las bodegas y la producción física a escala comercial, las consultoras externas suelen carecer de la sensibilidad necesaria para conectar a quienes envasan con quienes auditan.",
-        "Vitivinicultura": "Vitivinicultura",
-        "Producción": "Producción",
-        "PYMEs Familiares": "PYMEs Familiares",
-        "Ver LinkedIn": "Ver LinkedIn",
-        "Impacto": "Impacto",
-        "Crecimos de golpe y todo dependía de mí. Julia logró mapear procesos con una empatía enorme hacia los empleados. Nos dio el orden técnico para delegar con paz.": "Crecimos de golpe y todo dependía de mí. Julia logró mapear procesos con una empatía enorme hacia los empleados. Nos dio el orden técnico para delegar con paz.",
-        "Director Empresarial": "Director Empresarial",
-        "Empresa Familiar, Mendoza": "Empresa Familiar, Mendoza",
-        "Habitualmente te dejan un manual que se empolva. Ella estructuró circuitos reales y accionables. Por primera vez Producción y Finanzas se entienden.": "Habitualmente te dejan un manual que se empolva. Ella estructuró circuitos reales y accionables. Por primera vez Producción y Finanzas se entienden.",
-        "Gerencia de Operaciones": "Gerencia de Operaciones",
-        "Bodega Boutique": "Bodega Boutique",
-        "Logramos bajar a tierra procedimientos que estaban en la cabeza de los fundadores. La claridad que aportó a la empresa es invaluable.": "Logramos bajar a tierra procedimientos que estaban en la cabeza de los fundadores. La claridad que aportó a la empresa es invaluable.",
-        "Gerencia Administrativa": "Gerencia Administrativa",
-        "PYME de Servicios": "PYME de Servicios",
-        "Transformó el caos de la temporada alta en un flujo de trabajo predecible. Ahora basamos decisiones en datos, no en intuición.": "Transformó el caos de la temporada alta en un flujo de trabajo predecible. Ahora basamos decisiones en datos, no en intuición.",
-        "Jefatura de Planta": "Jefatura de Planta",
-        "Industria Manufacturera": "Industria Manufacturera",
-        "Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.": "Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.",
-        "Contacto por WhatsApp": "Contacto por WhatsApp",
-        "Consulta gratis": "Consulta gratis",
-        "(Primer Paso)": "(Primer Paso)",
-        "Nombre completo *": "Nombre completo *",
-        "Empresa / Negocio *": "Empresa / Negocio *",
-        "¿Cuál es tu principal necesidad hoy? *": "¿Cuál es tu principal necesidad hoy? *",
-        "WhatsApp o teléfono *": "WhatsApp o teléfono *",
-        "Email *": "Email *",
-        "Enviando...": "Enviando...",
-        "¡Gracias! Te contactamos en menos de 72 horas.": "¡Gracias! Te contactamos en menos de 72 horas.",
-        "Hubo un error. ": "Hubo un error. ",
-        "Escribinos por WhatsApp.": "Escribinos por WhatsApp.",
-        "O si preferís escribir directamente": "O si preferís escribir directamente",
-        "Consultoría Estratégica.": "Consultoría Estratégica."
-    },
-    en: {
-        "La \"h\" no suena...": "The \"h\" is silent...",
-        "pero da forma a las palabras.": "but it shapes the words.",
-        "Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.": "Exactly like our processes. They organize, connect, and structure your company, even if they operate in silence.",
-        "( Pasar el cursor o tocar )": "( Hover or tap )",
-        "(El Factor H)": "(The H Factor)",
-        "\"Dicen que la 'H' es muda, pero en consultoría, es la que más dice. Representa el factor Humano, ese que sostiene a las organizaciones cuando todo lo demás falla.\"": "\"They say the 'H' is silent, but in consulting, it's the one that says the most. It represents the Human factor, the one that sustains organizations when everything else fails.\"",
-        "Enviar WhatsApp": "Send WhatsApp",
-        "El Síntoma": "The Symptom",
-        "Tu empresa sigue creciendo, pero el día a día se rige por la": "Your company keeps growing, but the day-to-day is ruled by",
-        "urgencia continua.": "continuous urgency.",
-        "Concentración": "Concentration",
-        "El funcionamiento crítico recae sobre unas pocas cabezas, generando un techo invisible de crecimiento.": "Critical functions fall on a few heads, creating an invisible ceiling for growth.",
-        "Fricción entre Áreas": "Friction between Areas",
-        "La información se quiebra entre sectores fundacionales. Falta fluidez y visión compartida.": "Information breaks down between foundational sectors. There is a lack of fluidity and shared vision.",
-        "Sin Protocolo": "Without Protocol",
-        "El equipo trabaja arduamente, pero sin una documentación accionable que les permita autonomía real.": "The team works hard, but without actionable documentation that allows them real autonomy.",
-        "Datos Ciegos": "Blind Data",
-        "Sobra información dispersa, pero faltan indicadores consolidados para basar las decisiones estratégicas y financieras.": "There is plenty of dispersed information, but a lack of consolidated indicators to base strategic and financial decisions on.",
-        "Las Bases": "The Foundations",
-        "Diagnóstico de Gestión": "Management Diagnosis",
-        "Evaluamos la empresa como un todo orgánico. Identificamos las raíces del desorden, los problemas ocultos y las debilidades numéricas para obtener una foto real, sin filtro.": "We evaluate the company as an organic whole. We identify the roots of disorder, hidden problems, and numerical weaknesses to get a real picture, without filters.",
-        "Optimización Operativa": "Operational Optimization",
-        "Simplificamos circuitos complejos y creamos flujos de coordinación directos. Documentación táctica que todo tu equipo logra leer e instrumentar orgánicamente en la diaria.": "We simplify complex circuits and create direct coordination flows. Tactical documentation that your entire team can read and structurally implement daily.",
-        "Escala Estratégica": "Strategic Scaling",
-        "Trabajamos codo a codo en la fase de implementación. Garantizamos que el cambio estructural transite suavemente, aportando el seguimiento de control al nivel directivo.": "We work side by side during implementation. We ensure that structural change transitions smoothly, providing control monitoring at the board level.",
-        "La Directora": "The Director",
-        "Fundadora de Hache": "Founder of Hache",
-        "\"Entiendo el caos de crecer rápido, porque experimenté esos procesos trabajando inmersa en la": "\"I understand the chaos of growing fast, because I experienced those processes working immersed in the",
-        "industria real.": "real industry.",
-        "\"": "\"",
-        "No aplico análisis corporativos estandarizados. Mi propuesta de valor radica en un equilibrio muy fino entre rigurosidad analítica y una mirada genuinamente abocada a las personas que operan el negocio.": "I do not apply standardized corporate analyses. My value proposition lies in a very fine balance between analytical rigor and a genuine focus on the people operating the business.",
-        "Principalmente en industrias donde interviene la historia, las viñas, las bodegas y la producción física a escala comercial, las consultoras externas suelen carecer de la sensibilidad necesaria para conectar a quienes envasan con quienes auditan.": "Mainly in industries where history, vineyards, wineries, and physical production on a commercial scale are involved, external consultants often lack the sensitivity needed to connect those who package with those who audit.",
-        "Vitivinicultura": "Viticulture",
-        "Producción": "Production",
-        "PYMEs Familiares": "Family SMEs",
-        "Ver LinkedIn": "View LinkedIn",
-        "Impacto": "Impact",
-        "Crecimos de golpe y todo dependía de mí. Julia logró mapear procesos con una empatía enorme hacia los empleados. Nos dio el orden técnico para delegar con paz.": "We grew suddenly and everything depended on me. Julia managed to map processes with huge empathy towards employees. She gave us the technical order to delegate in peace.",
-        "Director Empresarial": "Business Director",
-        "Empresa Familiar, Mendoza": "Family Business, Mendoza",
-        "Habitualmente te dejan un manual que se empolva. Ella estructuró circuitos reales y accionables. Por primera vez Producción y Finanzas se entienden.": "They usually leave you a manual that collects dust. She structured real and actionable circuits. For the first time, Production and Finance understand each other.",
-        "Gerencia de Operaciones": "Operations Management",
-        "Bodega Boutique": "Boutique Winery",
-        "Logramos bajar a tierra procedimientos que estaban en la cabeza de los fundadores. La claridad que aportó a la empresa es invaluable.": "We managed to ground procedures that were in the founders' heads. The clarity brought to the company is invaluable.",
-        "Gerencia Administrativa": "Administrative Management",
-        "PYME de Servicios": "Services SME",
-        "Transformó el caos de la temporada alta en un flujo de trabajo predecible. Ahora basamos decisiones en datos, no en intuición.": "She transformed the chaos of the high season into a predictable workflow. We now base decisions on data, not intuition.",
-        "Jefatura de Planta": "Plant Management",
-        "Industria Manufacturera": "Manufacturing Industry",
-        "Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.": "Let's do a quick initial diagnosis. Let's talk about the blind spots of your internal operations and find the pillars of order for the next level.",
-        "Contacto por WhatsApp": "Contact via WhatsApp",
-        "Consulta gratis": "Free consultation",
-        "(Primer Paso)": "(First Step)",
-        "Nombre completo *": "Full name *",
-        "Empresa / Negocio *": "Company / Business *",
-        "¿Cuál es tu principal necesidad hoy? *": "What is your main need today? *",
-        "WhatsApp o teléfono *": "WhatsApp or phone *",
-        "Email *": "Email *",
-        "Enviando...": "Sending...",
-        "¡Gracias! Te contactamos en menos de 72 horas.": "Thank you! We'll be in touch within 72 hours.",
-        "Hubo un error. ": "There was an error. ",
-        "Escribinos por WhatsApp.": "Message us on WhatsApp.",
-        "O si preferís escribir directamente": "Or if you prefer to write directly",
-        "Consultoría Estratégica.": "Strategic Consulting."
-    }
+  es: {
+    'meta.title': 'Julia H | Consultoría de gestión para pymes y bodegas',
+
+    'a11y.skip': 'Ir al contenido',
+    'a11y.hMark': 'Descubrir el significado de la H',
+    'a11y.waFloat': 'Escribir por WhatsApp',
+
+    'brand.role': 'Consultora',
+    'nav.cta': 'Consulta gratis',
+
+    'h.line1': 'La "h" no suena...',
+    'h.line2': 'pero da forma a las palabras.',
+    'h.body':
+      'Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.',
+
+    'hero.hint': '( Pasar el cursor o tocar )',
+    'hero.h1':
+      'Orden y método para empresas que crecieron más rápido que sus procesos.',
+    'hero.sub':
+      'Consultoría de gestión para pymes, bodegas y empresas familiares. Mendoza, Argentina.',
+    'hero.ctaPrimary': 'Consulta gratis',
+    'hero.ctaWa': 'Enviar WhatsApp',
+
+    'intro.eyebrow': '(El Factor H)',
+    'intro.quote':
+      '"Dicen que la \'H\' es muda, pero en consultoría, es la que más dice. Representa el factor Humano, ese que sostiene a las organizaciones cuando todo lo demás falla."',
+
+    'sym.eyebrow': 'El Síntoma',
+    'sym.head': 'Tu empresa sigue creciendo, pero el día a día se rige por la',
+    'sym.headHighlight': 'urgencia continua.',
+    'sym.c1.t': 'Concentración',
+    'sym.c1.b':
+      'El funcionamiento crítico recae sobre unas pocas cabezas, generando un techo invisible de crecimiento.',
+    'sym.c2.t': 'Fricción entre áreas',
+    'sym.c2.b':
+      'La información se corta al pasar de un área a otra. Falta fluidez y visión compartida.',
+    'sym.c3.t': 'Sin protocolo',
+    'sym.c3.b':
+      'El equipo trabaja arduamente, pero sin una documentación accionable que les permita autonomía real.',
+    'sym.c4.t': 'Datos ciegos',
+    'sym.c4.b':
+      'Sobra información dispersa, pero faltan indicadores consolidados para basar las decisiones estratégicas y financieras.',
+
+    'svc.eyebrow': 'Las Bases',
+    'svc.s1.t': 'Diagnóstico de Gestión',
+    'svc.s1.b':
+      'Evaluamos la empresa como un todo orgánico. Identificamos las raíces del desorden, los problemas ocultos y las debilidades numéricas para obtener una foto real, sin filtro.',
+    'svc.s2.t': 'Optimización Operativa',
+    'svc.s2.b':
+      'Simplificamos circuitos complejos y creamos flujos de coordinación directos. Documentación táctica que todo tu equipo puede leer y aplicar en el día a día.',
+    'svc.s3.t': 'Escala Estratégica',
+    'svc.s3.b':
+      'Trabajamos codo a codo en la fase de implementación. Garantizamos que el cambio estructural se sostenga en el tiempo, aportando el seguimiento de control al nivel directivo.',
+    'svc.ctaText': '¿Te suena conocido alguno de estos puntos?',
+    'svc.ctaBtn': 'Hablemos',
+
+    'dir.eyebrow': 'La Directora',
+    'dir.photoAlt': 'Julia Halupczok, consultora de gestión',
+    'dir.caption': 'Fundadora de Julia H',
+    'dir.quote':
+      '"Entiendo el caos de crecer rápido, porque experimenté esos procesos trabajando inmersa en la',
+    'dir.quoteEm': 'industria real."',
+    'dir.b1':
+      'No aplico análisis corporativos estandarizados. Mi propuesta de valor radica en un equilibrio muy fino entre rigurosidad analítica y una mirada genuinamente abocada a las personas que operan el negocio.',
+    'dir.b2':
+      'Principalmente en industrias donde interviene la historia, las viñas, las bodegas y la producción física a escala comercial, las consultoras externas suelen carecer de la sensibilidad necesaria para conectar a quienes envasan con quienes auditan.',
+    'dir.tag1': 'Vitivinicultura',
+    'dir.tag2': 'Producción',
+    'dir.tag3': 'PYMEs Familiares',
+    'dir.linkedin': 'Ver LinkedIn',
+
+    'rev.eyebrow': 'Impacto',
+    'rev.q1':
+      'Crecimos de golpe y todo dependía de mí. Julia logró mapear procesos con una empatía enorme hacia los empleados. Nos dio el orden técnico para delegar con paz.',
+    'rev.a1': 'Director Empresarial',
+    'rev.o1': 'Empresa Familiar, Mendoza',
+    'rev.q2':
+      'Habitualmente te dejan un manual que se empolva. Ella estructuró circuitos reales y accionables. Por primera vez Producción y Finanzas se entienden.',
+    'rev.a2': 'Gerencia de Operaciones',
+    'rev.o2': 'Bodega Boutique',
+    'rev.q3':
+      'Logramos bajar a tierra procedimientos que estaban en la cabeza de los fundadores. La claridad que aportó a la empresa es invaluable.',
+    'rev.a3': 'Gerencia Administrativa',
+    'rev.o3': 'PYME de Servicios',
+    'rev.q4':
+      'Transformó el caos de la temporada alta en un flujo de trabajo predecible. Ahora basamos decisiones en datos, no en intuición.',
+    'rev.a4': 'Jefatura de Planta',
+    'rev.o4': 'Industria Manufacturera',
+
+    'form.eyebrow': '(Primer Paso)',
+    'form.head':
+      'Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el próximo escalón.',
+    'form.nombre': 'Nombre completo *',
+    'form.nombrePh': 'María Pérez',
+    'form.errNombre': 'Contanos tu nombre.',
+    'form.empresa': 'Empresa / Negocio *',
+    'form.empresaPh': 'Bodega Los Andes',
+    'form.errEmpresa': 'Contanos de qué empresa nos escribís.',
+    'form.necesidad': '¿Cuál es tu principal necesidad hoy? *',
+    'form.necesidadPh': 'Organizar los procesos internos del equipo',
+    'form.errNecesidad': 'Contanos brevemente qué necesitás.',
+    'form.whatsapp': 'WhatsApp o teléfono *',
+    'form.whatsappPh': '+54 9 261 000 0000',
+    'form.errWhatsapp': 'Necesitamos un teléfono para poder responderte.',
+    'form.email': 'Email (opcional)',
+    'form.emailPh': 'maria@bodegalosandes.com',
+    'form.errEmail': 'Revisá el formato del email.',
+    'form.submit': 'Consulta gratis',
+    'form.sending': 'Enviando...',
+    'form.success': '¡Gracias! Te contactamos en menos de 72 horas.',
+    'form.error': 'Hubo un error al enviar.',
+    'form.errorWa': 'Escribinos por WhatsApp.',
+    'form.alt': 'O si preferís escribir directamente',
+    'form.waLink': 'Contacto por WhatsApp',
+
+    'footer.tagline': 'Consultoría Estratégica.',
+  },
+
+  en: {
+    'meta.title': 'Julia H | Management consulting for SMEs and wineries',
+
+    'a11y.skip': 'Skip to content',
+    'a11y.hMark': 'Discover the meaning of the H',
+    'a11y.waFloat': 'Message us on WhatsApp',
+
+    'brand.role': 'Consultant',
+    'nav.cta': 'Free consultation',
+
+    'h.line1': 'The "h" is silent...',
+    'h.line2': 'but it shapes the words.',
+    'h.body':
+      'Exactly like our processes. They organize, connect and give structure to your company, even while they work in silence.',
+
+    'hero.hint': '( Hover or tap )',
+    'hero.h1':
+      'Order and method for companies that outgrew their own processes.',
+    'hero.sub':
+      'Management consulting for SMEs, wineries and family businesses. Mendoza, Argentina.',
+    'hero.ctaPrimary': 'Free consultation',
+    'hero.ctaWa': 'Send WhatsApp',
+
+    'intro.eyebrow': '(The H Factor)',
+    'intro.quote':
+      '"They say the \'H\' is silent, but in consulting it is the one that says the most. It stands for the Human factor, the one that holds organizations together when everything else fails."',
+
+    'sym.eyebrow': 'The Symptom',
+    'sym.head': 'Your company keeps growing, but the day-to-day runs on',
+    'sym.headHighlight': 'constant urgency.',
+    'sym.c1.t': 'Concentration',
+    'sym.c1.b':
+      'Critical operations rest on a handful of people, creating an invisible ceiling on growth.',
+    'sym.c2.t': 'Friction between areas',
+    'sym.c2.b':
+      'Information breaks down as it moves from one area to the next. Fluidity and a shared view are missing.',
+    'sym.c3.t': 'No protocol',
+    'sym.c3.b':
+      'The team works hard, but without actionable documentation that gives them real autonomy.',
+    'sym.c4.t': 'Blind data',
+    'sym.c4.b':
+      'There is plenty of scattered information, but no consolidated indicators to ground strategic and financial decisions.',
+
+    'svc.eyebrow': 'The Foundations',
+    'svc.s1.t': 'Management Diagnosis',
+    'svc.s1.b':
+      'We assess the company as an organic whole. We identify the roots of the disorder, the hidden problems and the weak numbers, to get a real, unfiltered picture.',
+    'svc.s2.t': 'Operational Optimization',
+    'svc.s2.b':
+      'We simplify complex circuits and build direct coordination flows. Practical documentation your whole team can actually read and apply day to day.',
+    'svc.s3.t': 'Strategic Scaling',
+    'svc.s3.b':
+      'We work side by side through implementation. We make sure the structural change holds over time, bringing control and follow-up to the leadership level.',
+    'svc.ctaText': 'Does any of this sound familiar?',
+    'svc.ctaBtn': "Let's talk",
+
+    'dir.eyebrow': 'The Director',
+    'dir.photoAlt': 'Julia Halupczok, management consultant',
+    'dir.caption': 'Founder of Julia H',
+    'dir.quote':
+      '"I understand the chaos of growing fast, because I lived through those processes working inside the',
+    'dir.quoteEm': 'real industry."',
+    'dir.b1':
+      'I do not apply off-the-shelf corporate analysis. My value lies in a careful balance between analytical rigor and genuine attention to the people who actually run the business.',
+    'dir.b2':
+      'Especially in industries shaped by history — vineyards, wineries and physical production at commercial scale — outside consultants often lack the sensitivity to connect the people on the bottling line with the people auditing the books.',
+    'dir.tag1': 'Winemaking',
+    'dir.tag2': 'Production',
+    'dir.tag3': 'Family SMEs',
+    'dir.linkedin': 'View LinkedIn',
+
+    'rev.eyebrow': 'Impact',
+    'rev.q1':
+      'We grew all at once and everything depended on me. Julia mapped our processes with enormous empathy for the staff. She gave us the technical order to delegate with peace of mind.',
+    'rev.a1': 'Managing Director',
+    'rev.o1': 'Family Business, Mendoza',
+    'rev.q2':
+      'Usually they leave you a manual that gathers dust. She structured real, actionable circuits. For the first time, Production and Finance understand each other.',
+    'rev.a2': 'Operations Management',
+    'rev.o2': 'Boutique Winery',
+    'rev.q3':
+      'We managed to get down on paper the procedures that lived in the founders’ heads. The clarity she brought to the company is invaluable.',
+    'rev.a3': 'Administrative Management',
+    'rev.o3': 'Services SME',
+    'rev.q4':
+      'She turned the chaos of high season into a predictable workflow. We now base decisions on data, not intuition.',
+    'rev.a4': 'Plant Management',
+    'rev.o4': 'Manufacturing Industry',
+
+    'form.eyebrow': '(First Step)',
+    'form.head':
+      "Let's start with a quick diagnosis. Let's talk about the blind spots in your internal operation and find the pillars of order for the next step up.",
+    'form.nombre': 'Full name *',
+    'form.nombrePh': 'María Pérez',
+    'form.errNombre': 'Please tell us your name.',
+    'form.empresa': 'Company / Business *',
+    'form.empresaPh': 'Los Andes Winery',
+    'form.errEmpresa': 'Please tell us which company you are writing from.',
+    'form.necesidad': 'What is your main need today? *',
+    'form.necesidadPh': "Organizing the team's internal processes",
+    'form.errNecesidad': 'Tell us briefly what you need.',
+    'form.whatsapp': 'WhatsApp or phone *',
+    'form.whatsappPh': '+54 9 261 000 0000',
+    'form.errWhatsapp': 'We need a phone number to get back to you.',
+    'form.email': 'Email (optional)',
+    'form.emailPh': 'maria@losandeswinery.com',
+    'form.errEmail': 'Please check the email format.',
+    'form.submit': 'Free consultation',
+    'form.sending': 'Sending...',
+    'form.success': "Thank you! We'll be in touch within 72 hours.",
+    'form.error': 'Something went wrong.',
+    'form.errorWa': 'Message us on WhatsApp.',
+    'form.alt': 'Or if you prefer to write directly',
+    'form.waLink': 'Contact via WhatsApp',
+
+    'footer.tagline': 'Strategic Consulting.',
+  },
 };
 
+const STORAGE_KEY = 'juliah-lang';
 let currentLang = 'es';
 
-// We store the original nodes mapped to keys
-const nodesWithText = [];
-
-function walkAndStore(node) {
-    if (node.nodeType === 3) {
-        const text = node.nodeValue.trim();
-        if (text && translations.es[text]) {
-            nodesWithText.push({ node, key: text });
-        }
-    } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
-        // Special case for elements that only contain the text we want to map exactly
-        // But doing it by exact text node matching is safer
-        for (let child of node.childNodes) {
-            walkAndStore(child);
-        }
-    }
+/** Devuelve la cadena de la clave en el idioma activo. */
+function tr(key, fallback) {
+  const dict = translations[currentLang] || translations.es;
+  return dict[key] || translations.es[key] || fallback || '';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Collect all translatable text nodes once
-    walkAndStore(document.body);
-});
+function applyLang(lang) {
+  currentLang = translations[lang] ? lang : 'es';
+  document.documentElement.lang = currentLang;
+  document.title = tr('meta.title');
 
-function setLang(lang) {
-    if (currentLang === lang) return;
-    currentLang = lang;
-    
-    nodesWithText.forEach(item => {
-        if (translations[lang][item.key]) {
-            item.node.nodeValue = item.node.nodeValue.replace(
-                item.node.nodeValue.trim(), 
-                translations[lang][item.key]
-            );
-        }
+  const apply = (attr, set) => {
+    document.querySelectorAll(`[${attr}]`).forEach((el) => {
+      const value = tr(el.getAttribute(attr));
+      if (value) set(el, value);
     });
+  };
 
-    // Update buttons UI
-    const btnEs = document.getElementById('btn-es');
-    const btnEn = document.getElementById('btn-en');
-    
-    if (lang === 'es') {
-        btnEs.classList.add('text-brand-softBlack', 'font-bold');
-        btnEs.classList.remove('font-normal', 'text-brand-smoke');
-        
-        btnEn.classList.add('text-brand-smoke', 'font-normal');
-        btnEn.classList.remove('font-bold', 'text-brand-softBlack');
-    } else {
-        btnEn.classList.add('text-brand-softBlack', 'font-bold');
-        btnEn.classList.remove('font-normal', 'text-brand-smoke');
-        
-        btnEs.classList.add('text-brand-smoke', 'font-normal');
-        btnEs.classList.remove('font-bold', 'text-brand-softBlack');
-    }
+  apply('data-i18n', (el, v) => (el.textContent = v));
+  apply('data-i18n-placeholder', (el, v) => el.setAttribute('placeholder', v));
+  apply('data-i18n-aria', (el, v) => el.setAttribute('aria-label', v));
+  apply('data-i18n-alt', (el, v) => el.setAttribute('alt', v));
+
+  const btnEs = document.getElementById('btn-es');
+  const btnEn = document.getElementById('btn-en');
+  if (btnEs) btnEs.setAttribute('aria-pressed', String(currentLang === 'es'));
+  if (btnEn) btnEn.setAttribute('aria-pressed', String(currentLang === 'en'));
 }
+
+/** Llamado desde los botones ES / EN del header. */
+function setLang(lang) {
+  if (lang === currentLang) return;
+  applyLang(lang);
+  try {
+    localStorage.setItem(STORAGE_KEY, currentLang);
+  } catch (_) {
+    /* modo privado: la elección simplemente no persiste */
+  }
+}
+
+let saved = null;
+try {
+  saved = localStorage.getItem(STORAGE_KEY);
+} catch (_) {
+  /* sin acceso a storage */
+}
+if (saved && saved !== 'es') applyLang(saved);
+else applyLang('es');

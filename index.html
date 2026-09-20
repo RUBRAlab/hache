@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HACHE by Julia Halupczok | Consultoría de Gestión</title>
-    <meta name="description" content="Consultoría de gestión para líderes y organizaciones. Acompañamos procesos de cambio, desarrollo de equipos y transformación organizacional." />
-    <meta name="keywords" content="consultoría de gestión, desarrollo organizacional, gestión del cambio, liderazgo, Julia Halupczok, transformación organizacional Argentina" />
+    <title>Julia H | Consultoría de gestión para pymes y bodegas</title>
+    <meta name="description" content="Consultoría de gestión para pymes, bodegas y empresas familiares. Diagnóstico, orden operativo y acompañamiento en la implementación. Mendoza, Argentina." />
     <meta name="author" content="Julia Halupczok" />
     <link rel="canonical" href="https://www.juliah.com.ar/" />
+
+    <!-- Iconos -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#F7F6F3">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.juliah.com.ar/" />
-    <meta property="og:title" content="HACHE by Julia Halupczok | Consultoría de Gestión" />
-    <meta property="og:description" content="Consultoría de gestión para líderes y organizaciones. Acompañamos procesos de cambio, desarrollo de equipos y transformación organizacional." />
+    <meta property="og:title" content="Julia H | Consultoría de gestión para pymes y bodegas" />
+    <meta property="og:description" content="Consultoría de gestión para pymes, bodegas y empresas familiares. Diagnóstico, orden operativo y acompañamiento en la implementación." />
     <meta property="og:image" content="https://www.juliah.com.ar/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Julia H — Consultora" />
     <meta property="og:locale" content="es_AR" />
-    <meta property="og:site_name" content="HACHE by Julia Halupczok" />
+    <meta property="og:site_name" content="Julia H" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HACHE by Julia Halupczok | Consultoría de Gestión" />
-    <meta name="twitter:description" content="Consultoría de gestión para líderes y organizaciones. Procesos de cambio y transformación organizacional." />
+    <meta name="twitter:title" content="Julia H | Consultoría de gestión para pymes y bodegas" />
+    <meta name="twitter:description" content="Consultoría de gestión para pymes, bodegas y empresas familiares." />
     <meta name="twitter:image" content="https://www.juliah.com.ar/og-image.png" />
 
     <!-- Schema.org -->
@@ -29,18 +37,28 @@
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "HACHE by Julia Halupczok",
+      "name": "Julia H",
+      "alternateName": "HACHE",
       "url": "https://www.juliah.com.ar",
-      "description": "Consultoría de gestión para líderes y organizaciones. Acompañamos procesos de cambio, desarrollo de equipos y transformación organizacional.",
-      "founder": { "@type": "Person", "name": "Julia Halupczok" },
+      "image": "https://www.juliah.com.ar/og-image.png",
+      "description": "Consultoría de gestión para pymes, bodegas y empresas familiares. Diagnóstico, orden operativo y acompañamiento en la implementación.",
+      "email": "juliahylux@gmail.com",
+      "telephone": "+54-9-261-470-8099",
+      "founder": {
+        "@type": "Person",
+        "name": "Julia Halupczok",
+        "jobTitle": "Consultora de gestión",
+        "sameAs": "https://www.linkedin.com/in/julia-halupczok/"
+      },
       "areaServed": { "@type": "Country", "name": "Argentina" },
+      "knowsAbout": ["Consultoría de gestión", "Desarrollo organizacional", "Gestión del cambio", "Vitivinicultura", "Pymes familiares"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios de consultoría",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoría de gestión" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo organizacional" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión del cambio" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico de gestión" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Optimización operativa" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Escala estratégica" } }
         ]
       }
     }
@@ -50,682 +68,405 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            warmWhite: '#F7F6F3',
-                            softBlack: '#1C1C1A',
-                            smoke: '#7A7A78',
-                            taupe: '#A8A39D',
-                            yellow: '#EFE1B7',
-                            peach: '#F5D4CC',
-                            sage: '#DBE4B7',
-                            mint: '#E2ECCF'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
 
-    <style>
-        body { background-color: #F7F6F3; color: #1C1C1A; overflow-x: hidden; }
-        
-        /* Smooth reveal general */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- ANIMACIÓN INTERACTIVA DE LA LETRA 'H' --- */
-        .h-interactive-container {
-            perspective: 1000px;
-        }
-        
-        .h-pillar {
-            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.8s ease;
-        }
-
-        .h-bridge {
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, width 0.6s ease;
-        }
-        
-        .h-content-reveal {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-            transition-delay: 0.1s;
-        }
-
-        /* Estados de hover responsivos */
-        .group:hover .h-left-pillar { transform: translateX(-60px); background-color: #EFE1B7; }
-        .group:hover .h-right-pillar { transform: translateX(60px); background-color: #F5D4CC; }
-        
-        @media (min-width: 768px) {
-            .group:hover .h-left-pillar { transform: translateX(-100px); }
-            .group:hover .h-right-pillar { transform: translateX(100px); }
-        }
-        
-        @media (min-width: 1024px) {
-            .group:hover .h-left-pillar { transform: translateX(-140px); }
-            .group:hover .h-right-pillar { transform: translateX(140px); }
-        }
-
-        .group:hover .h-bridge { opacity: 0; transform: scaleX(0); }
-        .group:hover .h-content-reveal { opacity: 1; transform: translateY(0); }
-        .group:hover .h-hint { opacity: 0; }
-
-        /* Custom scrollbar adaptative & elegant */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #E3DACD; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #A8A39D; }
-
-        /* Carousel Marquee */
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-50% - 1rem)); } /* -50% of the content + half gap */
-        }
-        .marquee-wrapper {
-            position: relative;
-            display: flex;
-            overflow: hidden;
-            /* fade out the edges */
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        }
-        .marquee-content {
-            display: flex;
-            gap: 2rem;
-            padding-right: 2rem;
-            animation: marquee 35s linear infinite;
-        }
-        .marquee-content:hover {
-            animation-play-state: paused;
-        }
-        .review-card {
-            flex-shrink: 0;
-            width: 280px; 
-            white-space: normal;
-        }
-        @media (min-width: 768px) {
-            .review-card { width: 340px; }
-        }
-        
-        /* Fluid Pastel Background */
-        .fluid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -10;
-            background-color: #F7F6F3;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        .fluid-bg::before,
-        .fluid-bg::after,
-        .fluid-blob-1,
-        .fluid-blob-2 {
-            content: '';
-            position: absolute;
-            filter: blur(90px);
-            opacity: 0.7;
-            border-radius: 50%;
-            animation: drift 25s infinite alternate ease-in-out;
-            pointer-events: none;
-            will-change: transform;
-        }
-        .fluid-blob-1 {
-            top: -15%;
-            right: -10%;
-            width: 75vw;
-            height: 75vw;
-            background: #F5D4CC; /* peach */
-            animation-delay: -5s;
-        }
-        .fluid-blob-2 {
-            bottom: -20%;
-            left: -15%;
-            width: 80vw;
-            height: 80vw;
-            background: #DBE4B7; /* sage */
-            animation-delay: -10s;
-        }
-        .fluid-bg::before {
-            top: 10%;
-            left: 10%;
-            width: 60vw;
-            height: 60vw;
-            background: #EFE1B7; /* yellow */
-            animation-delay: -15s;
-        }
-        .fluid-bg::after {
-            bottom: 5%;
-            right: 15%;
-            width: 55vw;
-            height: 55vw;
-            background: #E2ECCF; /* mint */
-        }
-        @keyframes drift {
-            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            33% { transform: translate(6%, 8%) scale(1.05) rotate(3deg); }
-            66% { transform: translate(-5%, 6%) scale(0.95) rotate(-3deg); }
-            100% { transform: translate(4%, -4%) scale(1.02) rotate(1deg); }
-        }
-        .grain-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -9;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
-            mix-blend-mode: multiply;
-        }
-    </style>
+    <link rel="stylesheet" href="/src/styles.css">
 </head>
-<body class="antialiased selection:bg-brand-peach selection:text-brand-softBlack font-sans text-brand-softBlack bg-transparent">
+<body class="antialiased selection:bg-brand-peach selection:text-brand-soft-black font-sans text-brand-soft-black">
 
-<!-- Fluid Pastel Background Elements -->
-<div class="fluid-bg">
-    <div class="fluid-blob-1"></div>
-    <div class="fluid-blob-2"></div>
+<a href="#contenido" data-i18n="a11y.skip" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-soft-black focus:text-white focus:px-5 focus:py-3 focus:text-xs focus:uppercase focus:tracking-widest">Ir al contenido</a>
+
+<!-- Fondo pastel -->
+<div class="fluid-bg" aria-hidden="true">
+    <div class="fluid-blob fluid-blob-1"></div>
+    <div class="fluid-blob fluid-blob-2"></div>
+    <div class="fluid-blob fluid-blob-3"></div>
+    <div class="fluid-blob fluid-blob-4"></div>
 </div>
-<div class="grain-overlay"></div>
+<div class="grain-overlay" aria-hidden="true"></div>
 
-<!-- HERO SECTION: THE INTERACTIVE 'H' CENTRADA -->
-<section class="relative w-full min-h-[100svh] flex flex-col items-center justify-center p-6 overflow-hidden">
-    
-    <!-- Logo superior izquierdo -->
-    <div class="absolute top-8 left-8 md:top-12 md:left-12 z-50 flex items-center gap-6">
-        <h1 class="font-serif leading-tight">
-            <span class="text-2xl font-medium tracking-tight block">JULIA H</span>
-            <span class="text-xs font-medium tracking-widest uppercase block">Consultora</span>
-        </h1>
-        <div class="flex flex-col gap-1 text-[10px] font-sans font-medium uppercase tracking-widest text-brand-smoke mt-1">
-            <button onclick="setLang('es')" id="btn-es" class="hover:text-brand-softBlack transition-colors text-left text-brand-softBlack font-bold">Español</button>
-            <button onclick="setLang('en')" id="btn-en" class="hover:text-brand-softBlack transition-colors text-left">Inglés</button>
-        </div>
-    </div>
+<!-- HEADER FIJO -->
+<header id="site-header" class="site-header fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 h-20 flex items-center justify-between gap-6">
+        <a href="#" class="font-serif leading-tight shrink-0" aria-label="Julia H, consultora — inicio">
+            <span class="text-xl md:text-2xl font-medium tracking-tight block">JULIA H</span>
+            <span data-i18n="brand.role" class="text-[11px] font-medium tracking-[0.2em] uppercase block text-brand-smoke">Consultora</span>
+        </a>
 
-    <!-- EL ELEMENTO INTERACTIVO DE LA 'H' CENTRAL -->
-    <div class="relative w-48 h-64 md:w-64 md:h-[22rem] lg:w-[22rem] lg:h-[28rem] group cursor-pointer h-interactive-container flex items-center justify-center z-40" aria-label="Interactuar para descubrir HACHE">
-        
-        <!-- Estructura visual de la 'H' -->
-        <div class="h-pillar h-left-pillar absolute left-0 top-0 w-12 md:w-16 lg:w-20 h-full bg-brand-softBlack z-10 shadow-xl"></div>
-        <div class="h-pillar h-right-pillar absolute right-0 top-0 w-12 md:w-16 lg:w-20 h-full bg-brand-softBlack z-10 shadow-xl"></div>
-        <div class="h-bridge absolute top-1/2 left-0 w-full h-12 md:h-16 lg:h-20 -translate-y-1/2 bg-brand-softBlack z-10"></div>
-        
-        <!-- El concepto que se revela detrás de la letra -->
-        <div class="h-content-reveal absolute inset-0 flex items-center justify-center z-0 text-center px-12 md:px-16 lg:px-20 w-[160%] -ml-[30%]">
-            <div class="flex flex-col space-y-4 lg:space-y-6">
-                <span class="font-serif italic text-2xl md:text-3xl lg:text-4xl text-brand-softBlack leading-tight">La "h" no suena...</span>
-                <span class="font-sans text-[10px] md:text-xs lg:text-sm uppercase tracking-[0.25em] text-brand-taupe font-semibold">pero da forma a las palabras.</span>
-                <div class="w-10 lg:w-16 h-px bg-brand-taupe mx-auto my-1 lg:my-2"></div>
-                <span class="font-sans text-xs md:text-sm lg:text-base text-brand-smoke max-w-[240px] lg:max-w-[320px] leading-relaxed">Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.</span>
+        <div class="flex items-center gap-5 md:gap-8">
+            <div class="flex items-center gap-2 text-[11px] font-medium uppercase tracking-widest text-brand-smoke" role="group" aria-label="Idioma">
+                <button type="button" onclick="setLang('es')" id="btn-es" aria-pressed="true" class="hover:text-brand-soft-black transition-colors aria-pressed:text-brand-soft-black aria-pressed:font-bold">ES</button>
+                <span class="text-brand-line" aria-hidden="true">/</span>
+                <button type="button" onclick="setLang('en')" id="btn-en" aria-pressed="false" class="hover:text-brand-soft-black transition-colors aria-pressed:text-brand-soft-black aria-pressed:font-bold">EN</button>
             </div>
-        </div>
 
-        <!-- Indicador de Interacción -->
-        <div class="h-hint absolute -bottom-20 md:-bottom-24 w-full text-center text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-semibold text-brand-taupe transition-opacity duration-300">
-            <span class="animate-pulse inline-block">( Pasar el cursor o tocar )</span>
-        </div>
-    </div>
-
-    <!-- Indicador de Scroll Inferior -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
-        <div class="w-px h-16 md:h-24 bg-gradient-to-b from-brand-softBlack/30 to-transparent"></div>
-    </div>
-</section>
-
-<!-- MAIN CONTENT WRAPPER -->
-<main class="w-full max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-
-    <!-- EL TEXTO REEMPLAZADO REUBICADO CON MÁS FUERZA COMO INTRODUCCIÓN EDITORIAL -->
-    <section class="py-24 md:py-32 flex flex-col items-center text-center border-t border-brand-softBlack/5">
-        <p class="text-sm md:text-base uppercase tracking-[0.2em] font-semibold text-brand-smoke mb-6 reveal">(El Factor H)</p>
-        <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.4] tracking-tight mb-10 reveal max-w-4xl text-pretty">
-            "Dicen que la 'H' es muda, pero en consultoría, es la que más dice. Representa el factor Humano, ese que sostiene a las organizaciones cuando todo lo demás falla."
-        </h2>
-        
-        <div class="reveal flex flex-col sm:flex-row gap-4 justify-center" style="transition-delay: 100ms;">
-            <a href="https://wa.me/5492614708099" target="_blank" class="inline-flex items-center justify-center px-10 py-5 bg-brand-softBlack text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300">
-                Enviar WhatsApp
-            </a>
-            <a href="#contacto" class="inline-flex items-center justify-center px-10 py-5 border-2 border-brand-softBlack text-brand-softBlack uppercase text-xs tracking-widest font-semibold hover:bg-brand-softBlack hover:text-white transition-colors duration-300">
+            <a href="#contacto" data-i18n="nav.cta" class="hidden sm:inline-flex items-center justify-center px-6 py-3 bg-brand-soft-black text-white uppercase text-[11px] tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300">
                 Consulta gratis
             </a>
         </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative w-full min-h-svh flex flex-col items-center justify-center gap-14 md:gap-16 px-6 pt-32 pb-28 text-center">
+
+    <!-- Monograma H interactivo. El texto revelado vive fuera del <button> para
+         que los lectores de pantalla puedan leerlo en lugar de solo el rótulo. -->
+    <div id="h-mark" class="h-mark relative w-40 h-56 md:w-52 md:h-72 lg:w-60 lg:h-[22rem] flex items-center justify-center shrink-0">
+
+        <div id="h-reveal" class="h-reveal absolute inset-0 flex items-center justify-center z-0 text-center w-[190%] -ml-[45%]">
+            <div class="flex flex-col gap-4 lg:gap-5">
+                <p data-i18n="h.line1" class="font-serif italic text-2xl md:text-3xl lg:text-4xl text-brand-soft-black leading-tight">La "h" no suena...</p>
+                <p data-i18n="h.line2" class="font-sans text-[11px] md:text-xs lg:text-sm uppercase tracking-[0.25em] text-brand-taupe font-semibold">pero da forma a las palabras.</p>
+                <span class="w-10 lg:w-16 h-px bg-brand-line mx-auto" aria-hidden="true"></span>
+                <p data-i18n="h.body" class="font-sans text-sm lg:text-base text-brand-smoke max-w-[260px] lg:max-w-[320px] leading-relaxed mx-auto">Exactamente como nuestros procesos. Organizan, conectan y dan estructura a tu empresa, aunque operen en silencio.</p>
+            </div>
+        </div>
+
+        <span class="h-pillar h-left-pillar absolute left-0 top-0 w-10 md:w-14 lg:w-16 h-full z-10 shadow-xl" aria-hidden="true"></span>
+        <span class="h-pillar h-right-pillar absolute right-0 top-0 w-10 md:w-14 lg:w-16 h-full z-10 shadow-xl" aria-hidden="true"></span>
+        <span class="h-bridge absolute top-1/2 left-0 w-full h-10 md:h-14 lg:h-16 bg-brand-soft-black z-10" aria-hidden="true"></span>
+
+        <button type="button" id="h-toggle" aria-expanded="false" aria-controls="h-reveal"
+            data-i18n-aria="a11y.hMark" aria-label="Descubrir el significado de la H"
+            class="absolute inset-0 z-20 cursor-pointer"></button>
+
+        <span class="h-hint absolute -bottom-12 inset-x-0 text-[11px] uppercase tracking-[0.25em] font-semibold text-brand-taupe">
+            <span data-i18n="hero.hint" class="animate-pulse inline-block">( Pasar el cursor o tocar )</span>
+        </span>
+    </div>
+
+    <!-- Propuesta de valor -->
+    <div class="max-w-3xl flex flex-col items-center gap-6">
+        <h1 data-i18n="hero.h1" class="font-serif text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.15] tracking-tight text-balance">
+            Orden y método para empresas que crecieron más rápido que sus procesos.
+        </h1>
+        <p data-i18n="hero.sub" class="text-base md:text-lg text-brand-smoke font-light leading-relaxed max-w-xl text-pretty">
+            Consultoría de gestión para pymes, bodegas y empresas familiares. Mendoza, Argentina.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto mt-2">
+            <a href="#contacto" data-i18n="hero.ctaPrimary" class="inline-flex items-center justify-center px-10 py-5 bg-brand-soft-black text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300">
+                Consulta gratis
+            </a>
+            <a href="https://wa.me/5492614708099" target="_blank" rel="noopener" data-i18n="hero.ctaWa" class="inline-flex items-center justify-center px-10 py-5 border-2 border-brand-soft-black text-brand-soft-black uppercase text-xs tracking-widest font-semibold hover:bg-brand-soft-black hover:text-white transition-colors duration-300">
+                Enviar WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-px h-14 bg-gradient-to-b from-brand-soft-black/25 to-transparent" aria-hidden="true"></div>
+</section>
+
+<!-- CONTENIDO -->
+<main id="contenido" class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+    <!-- EL FACTOR H -->
+    <section class="py-24 md:py-32 flex flex-col items-center text-center border-t border-brand-soft-black/5">
+        <p data-i18n="intro.eyebrow" class="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-brand-smoke mb-6 reveal">(El Factor H)</p>
+        <blockquote data-i18n="intro.quote" class="font-serif text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.4] tracking-tight reveal max-w-4xl text-pretty">
+            "Dicen que la 'H' es muda, pero en consultoría, es la que más dice. Representa el factor Humano, ese que sostiene a las organizaciones cuando todo lo demás falla."
+        </blockquote>
     </section>
 
-    <!-- SECTION: EL PROBLEMA (Mapeo de Dolor) -->
-    <section class="py-24 border-t border-brand-softBlack/5">
-        <h3 class="font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 reveal flex items-center">
-            <span class="w-6 h-px bg-brand-taupe mr-4"></span>El Síntoma
-        </h3>
-        
-        <div class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-softBlack leading-snug max-w-3xl mb-20 reveal">
-            Tu empresa sigue creciendo, pero el día a día se rige por la <span class="italic bg-brand-yellow/50 px-2 lg:px-4">urgencia continua.</span>
-        </div>
+    <!-- EL SÍNTOMA -->
+    <section class="py-24 border-t border-brand-soft-black/5">
+        <h2 class="font-sans text-[11px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 reveal flex items-center">
+            <span class="w-6 h-px bg-brand-line mr-4" aria-hidden="true"></span><span data-i18n="sym.eyebrow">El Síntoma</span>
+        </h2>
+
+        <p class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-soft-black leading-snug max-w-3xl mb-20 reveal">
+            <span data-i18n="sym.head">Tu empresa sigue creciendo, pero el día a día se rige por la</span>
+            <span data-i18n="sym.headHighlight" class="italic bg-brand-yellow/60 px-2 lg:px-4 box-decoration-clone">urgencia continua.</span>
+        </p>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <div class="reveal bg-brand-yellow/60 p-8">
-                <i data-lucide="users" class="w-6 h-6 text-[#A58D3D] mb-6 stroke-[2.5]"></i>
-                <h4 class="text-xl font-serif font-medium mb-3">Concentración</h4>
-                <p class="text-brand-softBlack/80 font-light leading-relaxed text-sm">El funcionamiento crítico recae sobre unas pocas cabezas, generando un techo invisible de crecimiento.</p>
-            </div>
-            <div class="reveal bg-brand-peach/60 p-8" style="transition-delay: 100ms;">
-                <i data-lucide="git-branch" class="w-6 h-6 text-[#A06C5D] mb-6 stroke-[2.5]"></i>
-                <h4 class="text-xl font-serif font-medium mb-3">Fricción entre Áreas</h4>
-                <p class="text-brand-softBlack/80 font-light leading-relaxed text-sm">La información se quiebra entre sectores fundacionales. Falta fluidez y visión compartida.</p>
-            </div>
-            <div class="reveal bg-brand-sage/60 p-8" style="transition-delay: 200ms;">
-                <i data-lucide="folder-search" class="w-6 h-6 text-[#757F4D] mb-6 stroke-[2.5]"></i>
-                <h4 class="text-xl font-serif font-medium mb-3">Sin Protocolo</h4>
-                <p class="text-brand-softBlack/80 font-light leading-relaxed text-sm">El equipo trabaja arduamente, pero sin una documentación accionable que les permita autonomía real.</p>
-            </div>
-            <div class="reveal bg-brand-mint/60 p-8" style="transition-delay: 300ms;">
-                <i data-lucide="pie-chart" class="w-6 h-6 text-[#758455] mb-6 stroke-[2.5]"></i>
-                <h4 class="text-xl font-serif font-medium mb-3">Datos Ciegos</h4>
-                <p class="text-brand-softBlack/80 font-light leading-relaxed text-sm">Sobra información dispersa, pero faltan indicadores consolidados para basar las decisiones estratégicas y financieras.</p>
-            </div>
+            <article class="reveal bg-brand-yellow/60 p-8">
+                <svg class="w-6 h-6 text-brand-ink-yellow mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                <h3 data-i18n="sym.c1.t" class="text-xl font-serif font-medium mb-3">Concentración</h3>
+                <p data-i18n="sym.c1.b" class="text-brand-soft-black/80 font-light leading-relaxed text-sm">El funcionamiento crítico recae sobre unas pocas cabezas, generando un techo invisible de crecimiento.</p>
+            </article>
+            <article class="reveal bg-brand-peach/60 p-8" style="transition-delay: 100ms;">
+                <svg class="w-6 h-6 text-brand-ink-peach mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                <h3 data-i18n="sym.c2.t" class="text-xl font-serif font-medium mb-3">Fricción entre áreas</h3>
+                <p data-i18n="sym.c2.b" class="text-brand-soft-black/80 font-light leading-relaxed text-sm">La información se corta al pasar de un área a otra. Falta fluidez y visión compartida.</p>
+            </article>
+            <article class="reveal bg-brand-sage/60 p-8" style="transition-delay: 200ms;">
+                <svg class="w-6 h-6 text-brand-ink-sage mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v4.1"/><path d="m21 21-1.9-1.9"/><circle cx="17" cy="17" r="3"/></svg>
+                <h3 data-i18n="sym.c3.t" class="text-xl font-serif font-medium mb-3">Sin protocolo</h3>
+                <p data-i18n="sym.c3.b" class="text-brand-soft-black/80 font-light leading-relaxed text-sm">El equipo trabaja arduamente, pero sin una documentación accionable que les permita autonomía real.</p>
+            </article>
+            <article class="reveal bg-brand-mint/60 p-8" style="transition-delay: 300ms;">
+                <svg class="w-6 h-6 text-brand-ink-mint mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></svg>
+                <h3 data-i18n="sym.c4.t" class="text-xl font-serif font-medium mb-3">Datos ciegos</h3>
+                <p data-i18n="sym.c4.b" class="text-brand-soft-black/80 font-light leading-relaxed text-sm">Sobra información dispersa, pero faltan indicadores consolidados para basar las decisiones estratégicas y financieras.</p>
+            </article>
         </div>
     </section>
 
-    <!-- SECTION: AUTORIDAD / SOBRE JULIA (Revista Vibe) -->
-    <section id="experiencia" class="py-24 md:py-32 border-t border-brand-softBlack/5">
-        <h3 class="font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 md:mb-24 reveal flex items-center">
-            <span class="w-6 h-px bg-brand-taupe mr-4"></span>La Directora
-        </h3>
+    <!-- LAS BASES (servicios) -->
+    <section id="servicios" class="py-24 border-t border-brand-soft-black/5">
+        <h2 class="font-sans text-[11px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-20 reveal flex items-center">
+            <span class="w-6 h-px bg-brand-line mr-4" aria-hidden="true"></span><span data-i18n="svc.eyebrow">Las Bases</span>
+        </h2>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+            <article class="reveal bg-brand-yellow/60 p-8 lg:p-10 transition-all hover:bg-brand-yellow/80 hover:-translate-y-1">
+                <p class="text-brand-ink-yellow font-serif italic text-2xl mb-8" aria-hidden="true">01.</p>
+                <h3 data-i18n="svc.s1.t" class="text-3xl font-serif mb-4">Diagnóstico de Gestión</h3>
+                <p data-i18n="svc.s1.b" class="text-brand-soft-black/80 font-light leading-relaxed text-lg">Evaluamos la empresa como un todo orgánico. Identificamos las raíces del desorden, los problemas ocultos y las debilidades numéricas para obtener una foto real, sin filtro.</p>
+            </article>
+            <article class="reveal bg-brand-peach/60 p-8 lg:p-10 transition-all hover:bg-brand-peach/80 hover:-translate-y-1" style="transition-delay: 100ms;">
+                <p class="text-brand-ink-peach font-serif italic text-2xl mb-8" aria-hidden="true">02.</p>
+                <h3 data-i18n="svc.s2.t" class="text-3xl font-serif mb-4">Optimización Operativa</h3>
+                <p data-i18n="svc.s2.b" class="text-brand-soft-black/80 font-light leading-relaxed text-lg">Simplificamos circuitos complejos y creamos flujos de coordinación directos. Documentación táctica que todo tu equipo puede leer y aplicar en el día a día.</p>
+            </article>
+            <article class="reveal bg-brand-sage/60 p-8 lg:p-10 transition-all hover:bg-brand-sage/80 hover:-translate-y-1" style="transition-delay: 200ms;">
+                <p class="text-brand-ink-sage font-serif italic text-2xl mb-8" aria-hidden="true">03.</p>
+                <h3 data-i18n="svc.s3.t" class="text-3xl font-serif mb-4">Escala Estratégica</h3>
+                <p data-i18n="svc.s3.b" class="text-brand-soft-black/80 font-light leading-relaxed text-lg">Trabajamos codo a codo en la fase de implementación. Garantizamos que el cambio estructural se sostenga en el tiempo, aportando el seguimiento de control al nivel directivo.</p>
+            </article>
+        </div>
+
+        <div class="reveal mt-16 flex flex-col sm:flex-row items-center justify-center gap-5 text-center">
+            <p data-i18n="svc.ctaText" class="text-brand-smoke font-light text-lg">¿Te suena conocido alguno de estos puntos?</p>
+            <a href="#contacto" data-i18n="svc.ctaBtn" class="inline-flex items-center justify-center px-8 py-4 border-2 border-brand-soft-black text-brand-soft-black uppercase text-xs tracking-widest font-semibold hover:bg-brand-soft-black hover:text-white transition-colors duration-300">
+                Hablemos
+            </a>
+        </div>
+    </section>
+
+    <!-- LA DIRECTORA -->
+    <section id="experiencia" class="py-24 md:py-32 border-t border-brand-soft-black/5">
+        <h2 class="font-sans text-[11px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 md:mb-24 reveal flex items-center">
+            <span class="w-6 h-px bg-brand-line mr-4" aria-hidden="true"></span><span data-i18n="dir.eyebrow">La Directora</span>
+        </h2>
 
         <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
-
             <div class="lg:w-2/5 w-full order-2 lg:order-1 reveal">
-                <div class="aspect-[3/4] w-full relative group overflow-hidden border border-brand-softBlack/5 shadow-sm">
-                    <div class="absolute inset-0 bg-[#EFE1B7]"></div>
-                    <div class="absolute inset-0 bg-[url('/julia.jpg')] bg-cover bg-center mix-blend-luminosity opacity-90 group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-[1.5s]"></div>
-                    <div class="absolute inset-x-8 bottom-8 text-white">
-                        <span class="font-serif text-3xl italic block mb-2">Julia.</span>
-                        <span class="font-sans text-xs uppercase tracking-widest font-medium">Fundadora de Julia H</span>
+                <figure class="relative">
+                    <div class="aspect-3/4 w-full relative overflow-hidden border border-brand-soft-black/5 shadow-sm bg-brand-yellow">
+                        <picture>
+                            <source srcset="/julia.webp" type="image/webp">
+                            <img src="/julia.jpg" width="900" height="1200" loading="lazy" decoding="async"
+                                data-i18n-alt="dir.photoAlt" alt="Julia Halupczok, consultora de gestión"
+                                class="absolute inset-0 w-full h-full object-cover">
+                        </picture>
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-soft-black/70 via-brand-soft-black/10 to-transparent" aria-hidden="true"></div>
+                        <figcaption class="absolute inset-x-8 bottom-8 text-white">
+                            <span class="font-serif text-3xl italic block mb-2">Julia.</span>
+                            <span data-i18n="dir.caption" class="font-sans text-xs uppercase tracking-widest font-medium">Fundadora de Julia H</span>
+                        </figcaption>
                     </div>
-                </div>
+                </figure>
             </div>
 
             <div class="lg:w-3/5 w-full order-1 lg:order-2 self-center reveal">
-                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-softBlack leading-[1.15] mb-10">
-                    "Entiendo el caos de crecer rápido, porque experimenté esos procesos trabajando inmersa en la <span class="italic text-brand-taupe">industria real.</span>"
-                </h2>
+                <p class="font-serif text-3xl md:text-4xl lg:text-5xl text-brand-soft-black leading-[1.15] mb-10">
+                    <span data-i18n="dir.quote">"Entiendo el caos de crecer rápido, porque experimenté esos procesos trabajando inmersa en la</span>
+                    <span data-i18n="dir.quoteEm" class="italic text-brand-taupe">industria real."</span>
+                </p>
 
                 <div class="space-y-6 text-brand-smoke font-light text-lg leading-relaxed mb-12">
-                    <p>No aplico análisis corporativos estandarizados. Mi propuesta de valor radica en un equilibrio muy fino entre rigurosidad analítica y una mirada genuinamente abocada a las personas que operan el negocio.</p>
-                    <p>Principalmente en industrias donde interviene la historia, las viñas, las bodegas y la producción física a escala comercial, las consultoras externas suelen carecer de la sensibilidad necesaria para conectar a quienes envasan con quienes auditan.</p>
+                    <p data-i18n="dir.b1">No aplico análisis corporativos estandarizados. Mi propuesta de valor radica en un equilibrio muy fino entre rigurosidad analítica y una mirada genuinamente abocada a las personas que operan el negocio.</p>
+                    <p data-i18n="dir.b2">Principalmente en industrias donde interviene la historia, las viñas, las bodegas y la producción física a escala comercial, las consultoras externas suelen carecer de la sensibilidad necesaria para conectar a quienes envasan con quienes auditan.</p>
                 </div>
 
-                <div class="flex flex-wrap gap-4 mb-8">
-                    <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-5 py-3 border border-brand-softBlack/15 text-brand-softBlack rounded-full">Vitivinicultura</span>
-                    <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-5 py-3 border border-brand-softBlack/15 text-brand-softBlack rounded-full">Producción</span>
-                    <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-5 py-3 bg-brand-softBlack text-white rounded-full">PYMEs Familiares</span>
-                </div>
+                <ul class="flex flex-wrap gap-4 mb-8 list-none p-0">
+                    <li data-i18n="dir.tag1" class="text-xs font-semibold uppercase tracking-widest px-5 py-3 border border-brand-soft-black/15 text-brand-soft-black rounded-full">Vitivinicultura</li>
+                    <li data-i18n="dir.tag2" class="text-xs font-semibold uppercase tracking-widest px-5 py-3 border border-brand-soft-black/15 text-brand-soft-black rounded-full">Producción</li>
+                    <li data-i18n="dir.tag3" class="text-xs font-semibold uppercase tracking-widest px-5 py-3 bg-brand-soft-black text-white rounded-full">PYMEs Familiares</li>
+                </ul>
 
-                <a href="https://www.linkedin.com/in/julia-halupczok/" target="_blank" class="inline-flex items-center text-xs uppercase tracking-widest font-semibold hover:text-brand-taupe transition-colors pb-1 border-b border-brand-softBlack/20 hover:border-brand-taupe group">
-                    Ver LinkedIn <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                <a href="https://www.linkedin.com/in/julia-halupczok/" target="_blank" rel="noopener" class="group inline-flex items-center text-xs uppercase tracking-widest font-semibold text-brand-soft-black hover:text-brand-taupe transition-colors pb-1 border-b border-brand-soft-black/20 hover:border-brand-taupe">
+                    <span data-i18n="dir.linkedin">Ver LinkedIn</span>
+                    <svg class="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                 </a>
             </div>
-
         </div>
     </section>
 
-    <!-- SECTION: LA SOLUCION (Estructura Editorial) -->
-    <section class="py-24 border-t border-brand-softBlack/5">
-        <h3 class="font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-20 reveal flex items-center">
-            <span class="w-6 h-px bg-brand-taupe mr-4"></span>Las Bases
-        </h3>
-        
-        <div class="grid lg:grid-cols-3 gap-6">
-            <!-- Servicio 1 -->
-            <div class="group reveal cursor-default bg-brand-yellow/60 p-8 lg:p-10 transition-all hover:bg-brand-yellow/80 hover:-translate-y-1">
-                <div class="text-[#A58D3D] font-serif italic text-2xl mb-8">01.</div>
-                <div>
-                    <h4 class="text-3xl font-serif mb-4">Diagnóstico de Gestión</h4>
-                    <p class="text-brand-softBlack/80 font-light leading-relaxed text-lg">Evaluamos la empresa como un todo orgánico. Identificamos las raíces del desorden, los problemas ocultos y las debilidades numéricas para obtener una foto real, sin filtro.</p>
-                </div>
-            </div>
-            
-            <!-- Servicio 2 -->
-            <div class="group reveal cursor-default bg-brand-peach/60 p-8 lg:p-10 transition-all hover:bg-brand-peach/80 hover:-translate-y-1" style="transition-delay: 100ms;">
-                <div class="text-[#A06C5D] font-serif italic text-2xl mb-8">02.</div>
-                <div>
-                    <h4 class="text-3xl font-serif mb-4">Optimización Operativa</h4>
-                    <p class="text-brand-softBlack/80 font-light leading-relaxed text-lg">Simplificamos circuitos complejos y creamos flujos de coordinación directos. Documentación táctica que todo tu equipo logra leer e instrumentar orgánicamente en la diaria.</p>
-                </div>
-            </div>
+    <!-- IMPACTO -->
+    <section class="py-24 border-t border-brand-soft-black/5">
+        <h2 class="font-sans text-[11px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 reveal flex items-center">
+            <span class="w-6 h-px bg-brand-line mr-4" aria-hidden="true"></span><span data-i18n="rev.eyebrow">Impacto</span>
+        </h2>
 
-            <!-- Servicio 3 -->
-            <div class="group reveal cursor-default bg-brand-sage/60 p-8 lg:p-10 transition-all hover:bg-brand-sage/80 hover:-translate-y-1" style="transition-delay: 200ms;">
-                <div class="text-[#757F4D] font-serif italic text-2xl mb-8">03.</div>
-                <div>
-                    <h4 class="text-3xl font-serif mb-4">Escala Estratégica</h4>
-                    <p class="text-brand-softBlack/80 font-light leading-relaxed text-lg">Trabajamos codo a codo en la fase de implementación. Garantizamos que el cambio estructural transite suavemente, aportando el seguimiento de control al nivel directivo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: TESTIMONIOS EDITORIALES -->
-    <section class="py-24 border-t border-brand-softBlack/5">
-        <h3 class="font-sans text-[10px] uppercase tracking-[0.25em] font-semibold text-brand-taupe mb-16 reveal flex items-center">
-            <span class="w-6 h-px bg-brand-taupe mr-4"></span>Impacto
-        </h3>
-        
-        <div class="reveal -mx-4 md:-mx-8 lg:-mx-12 overflow-hidden">
-            <div class="marquee-wrapper py-4">
+        <div class="reveal -mx-6 md:-mx-12 lg:-mx-16 overflow-hidden">
+            <div class="marquee-wrapper py-4" id="marquee">
                 <div class="marquee-content">
-                    
-                    <!-- Set 1 -->
-                    <!-- Review 1 -->
-                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-yellow/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5">
-                        <span class="text-brand-yellow text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
-                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+
+                    <figure class="review-card border border-brand-soft-black/10 p-8 flex flex-col justify-between bg-brand-yellow/40 transition-all hover:border-brand-soft-black/30 hover:shadow-lg hover:shadow-brand-soft-black/5">
+                        <blockquote data-i18n="rev.q1" class="font-serif text-lg md:text-xl text-brand-soft-black leading-snug mb-8">
                             Crecimos de golpe y todo dependía de mí. Julia logró mapear procesos con una empatía enorme hacia los empleados. Nos dio el orden técnico para delegar con paz.
-                        </p>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-6 h-px bg-brand-taupe"></div>
-                            <div>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Director Empresarial</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Empresa Familiar, Mendoza</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Review 2 -->
-                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-peach/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5">
-                        <span class="text-brand-peach text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
-                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                        </blockquote>
+                        <figcaption class="flex items-center gap-4 mt-auto">
+                            <span class="w-6 h-px bg-brand-line shrink-0" aria-hidden="true"></span>
+                            <span>
+                                <span data-i18n="rev.a1" class="block text-[11px] uppercase tracking-[0.2em] font-bold text-brand-soft-black">Director Empresarial</span>
+                                <span data-i18n="rev.o1" class="block text-[11px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Empresa Familiar, Mendoza</span>
+                            </span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="review-card border border-brand-soft-black/10 p-8 flex flex-col justify-between bg-brand-peach/40 transition-all hover:border-brand-soft-black/30 hover:shadow-lg hover:shadow-brand-soft-black/5">
+                        <blockquote data-i18n="rev.q2" class="font-serif text-lg md:text-xl text-brand-soft-black leading-snug mb-8">
                             Habitualmente te dejan un manual que se empolva. Ella estructuró circuitos reales y accionables. Por primera vez Producción y Finanzas se entienden.
-                        </p>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-6 h-px bg-brand-taupe"></div>
-                            <div>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Gerencia de Operaciones</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Bodega Boutique</p>
-                            </div>
-                        </div>
-                    </div>
+                        </blockquote>
+                        <figcaption class="flex items-center gap-4 mt-auto">
+                            <span class="w-6 h-px bg-brand-line shrink-0" aria-hidden="true"></span>
+                            <span>
+                                <span data-i18n="rev.a2" class="block text-[11px] uppercase tracking-[0.2em] font-bold text-brand-soft-black">Gerencia de Operaciones</span>
+                                <span data-i18n="rev.o2" class="block text-[11px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Bodega Boutique</span>
+                            </span>
+                        </figcaption>
+                    </figure>
 
-                    <!-- Review 3 -->
-                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-sage/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5">
-                        <span class="text-brand-sage text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
-                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                    <figure class="review-card border border-brand-soft-black/10 p-8 flex flex-col justify-between bg-brand-sage/40 transition-all hover:border-brand-soft-black/30 hover:shadow-lg hover:shadow-brand-soft-black/5">
+                        <blockquote data-i18n="rev.q3" class="font-serif text-lg md:text-xl text-brand-soft-black leading-snug mb-8">
                             Logramos bajar a tierra procedimientos que estaban en la cabeza de los fundadores. La claridad que aportó a la empresa es invaluable.
-                        </p>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-6 h-px bg-brand-taupe"></div>
-                            <div>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Gerencia Administrativa</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">PYME de Servicios</p>
-                            </div>
-                        </div>
-                    </div>
+                        </blockquote>
+                        <figcaption class="flex items-center gap-4 mt-auto">
+                            <span class="w-6 h-px bg-brand-line shrink-0" aria-hidden="true"></span>
+                            <span>
+                                <span data-i18n="rev.a3" class="block text-[11px] uppercase tracking-[0.2em] font-bold text-brand-soft-black">Gerencia Administrativa</span>
+                                <span data-i18n="rev.o3" class="block text-[11px] uppercase tracking-[0.2em] font-medium text-brand-smoke">PYME de Servicios</span>
+                            </span>
+                        </figcaption>
+                    </figure>
 
-                    <!-- Review 4 -->
-                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-mint/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5">
-                        <span class="text-brand-mint text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
-                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
+                    <figure class="review-card border border-brand-soft-black/10 p-8 flex flex-col justify-between bg-brand-mint/40 transition-all hover:border-brand-soft-black/30 hover:shadow-lg hover:shadow-brand-soft-black/5">
+                        <blockquote data-i18n="rev.q4" class="font-serif text-lg md:text-xl text-brand-soft-black leading-snug mb-8">
                             Transformó el caos de la temporada alta en un flujo de trabajo predecible. Ahora basamos decisiones en datos, no en intuición.
-                        </p>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-6 h-px bg-brand-taupe"></div>
-                            <div>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Jefatura de Planta</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Industria Manufacturera</p>
-                            </div>
-                        </div>
-                    </div>
+                        </blockquote>
+                        <figcaption class="flex items-center gap-4 mt-auto">
+                            <span class="w-6 h-px bg-brand-line shrink-0" aria-hidden="true"></span>
+                            <span>
+                                <span data-i18n="rev.a4" class="block text-[11px] uppercase tracking-[0.2em] font-bold text-brand-soft-black">Jefatura de Planta</span>
+                                <span data-i18n="rev.o4" class="block text-[11px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Industria Manufacturera</span>
+                            </span>
+                        </figcaption>
+                    </figure>
 
-                    <!-- Set 2 (Duplicate for infinite scroll) -->
-                    <!-- Review 1 -->
-                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-yellow/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5" aria-hidden="true">
-                        <span class="text-brand-yellow text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
-                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
-                            Crecimos de golpe y todo dependía de mí. Julia logró mapear procesos con una empatía enorme hacia los empleados. Nos dio el orden técnico para delegar con paz.
-                        </p>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-6 h-px bg-brand-taupe"></div>
-                            <div>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Director Empresarial</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Empresa Familiar, Mendoza</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Review 2 -->
-                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-peach/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5" aria-hidden="true">
-                        <span class="text-brand-peach text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
-                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
-                            Habitualmente te dejan un manual que se empolva. Ella estructuró circuitos reales y accionables. Por primera vez Producción y Finanzas se entienden.
-                        </p>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-6 h-px bg-brand-taupe"></div>
-                            <div>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Gerencia de Operaciones</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Bodega Boutique</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review 3 -->
-                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-sage/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5" aria-hidden="true">
-                        <span class="text-brand-sage text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
-                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
-                            Logramos bajar a tierra procedimientos que estaban en la cabeza de los fundadores. La claridad que aportó a la empresa es invaluable.
-                        </p>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-6 h-px bg-brand-taupe"></div>
-                            <div>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Gerencia Administrativa</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">PYME de Servicios</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review 4 -->
-                    <div class="review-card border border-brand-softBlack/10 p-8 flex flex-col justify-between bg-brand-mint/40 relative group transition-all hover:border-brand-softBlack/30 hover:shadow-lg hover:shadow-brand-softBlack/5" aria-hidden="true">
-                        <span class="text-brand-mint text-5xl leading-none italic absolute top-4 left-4 opacity-70 group-hover:opacity-100 transition-opacity">"</span>
-                        <p class="font-serif text-lg md:text-xl text-brand-softBlack leading-snug mb-8 relative z-10 pt-4">
-                            Transformó el caos de la temporada alta en un flujo de trabajo predecible. Ahora basamos decisiones en datos, no en intuición.
-                        </p>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-6 h-px bg-brand-taupe"></div>
-                            <div>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-softBlack">Jefatura de Planta</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] font-medium text-brand-smoke">Industria Manufacturera</p>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- Duplicado para el scroll infinito -->
+                    <div class="marquee-clone contents" aria-hidden="true"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: FORMULARIO DE CONTACTO -->
-    <section id="contacto" class="py-32 md:py-40 border-t border-brand-softBlack/10">
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-32 md:py-40 border-t border-brand-soft-black/10">
         <div class="reveal text-center mx-auto max-w-4xl mb-12">
-            <p class="text-sm md:text-base uppercase tracking-[0.2em] font-semibold text-brand-smoke mb-4">(Primer Paso)</p>
-            <p class="text-2xl md:text-3xl text-brand-softBlack font-light leading-relaxed max-w-3xl mx-auto">
-                Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el proximo escalón.
-            </p>
+            <p data-i18n="form.eyebrow" class="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-brand-smoke mb-4">(Primer Paso)</p>
+            <h2 data-i18n="form.head" class="text-2xl md:text-3xl text-brand-soft-black font-light leading-relaxed max-w-3xl mx-auto text-pretty">
+                Hagamos un primer diagnóstico ágil. Hablemos de los puntos ciegos de tu operativa interna y encontremos los pilares de orden para el próximo escalón.
+            </h2>
         </div>
 
-        <!-- Formulario -->
         <div class="reveal mx-auto max-w-lg" style="transition-delay: 100ms;">
             <form id="contact-form" class="flex flex-col gap-5" novalidate>
-                <div class="flex flex-col gap-1.5">
-                    <label for="f-nombre" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">Nombre completo *</label>
-                    <input id="f-nombre" name="nombre" type="text" required placeholder="Julia Halupczok"
-                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
-                </div>
-                <div class="flex flex-col gap-1.5">
-                    <label for="f-empresa" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">Empresa / Negocio *</label>
-                    <input id="f-empresa" name="empresa" type="text" required placeholder="Bodega Los Andes"
-                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
-                </div>
-                <div class="flex flex-col gap-1.5">
-                    <label for="f-necesidad" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">¿Cuál es tu principal necesidad hoy? *</label>
-                    <input id="f-necesidad" name="necesidad" type="text" required placeholder="Organizar procesos internos del equipo"
-                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
-                </div>
-                <div class="flex flex-col gap-1.5">
-                    <label for="f-whatsapp" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">WhatsApp o teléfono *</label>
-                    <input id="f-whatsapp" name="whatsapp" type="tel" required placeholder="+54 9 261 000 0000"
-                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
-                </div>
-                <div class="flex flex-col gap-1.5">
-                    <label for="f-email" class="text-[10px] uppercase tracking-widest font-semibold text-brand-smoke">Email *</label>
-                    <input id="f-email" name="email" type="email" required placeholder="julia@bodegalosandes.com"
-                        class="w-full bg-transparent border border-brand-softBlack/20 focus:border-brand-softBlack px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-brand-taupe/60 disabled:opacity-50">
+                <div class="flex flex-col gap-1.5" data-field>
+                    <label for="f-nombre" data-i18n="form.nombre" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">Nombre completo *</label>
+                    <input id="f-nombre" name="nombre" type="text" autocomplete="name" required data-i18n-placeholder="form.nombrePh" placeholder="María Pérez"
+                        class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50">
+                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errNombre">Contanos tu nombre.</p>
                 </div>
 
-                <!-- Botón submit -->
+                <div class="flex flex-col gap-1.5" data-field>
+                    <label for="f-empresa" data-i18n="form.empresa" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">Empresa / Negocio *</label>
+                    <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required data-i18n-placeholder="form.empresaPh" placeholder="Bodega Los Andes"
+                        class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50">
+                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errEmpresa">Contanos de qué empresa nos escribís.</p>
+                </div>
+
+                <div class="flex flex-col gap-1.5" data-field>
+                    <label for="f-necesidad" data-i18n="form.necesidad" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">¿Cuál es tu principal necesidad hoy? *</label>
+                    <textarea id="f-necesidad" name="necesidad" rows="4" required data-i18n-placeholder="form.necesidadPh" placeholder="Organizar los procesos internos del equipo"
+                        class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50 resize-y"></textarea>
+                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errNecesidad">Contanos brevemente qué necesitás.</p>
+                </div>
+
+                <div class="flex flex-col gap-1.5" data-field>
+                    <label for="f-whatsapp" data-i18n="form.whatsapp" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">WhatsApp o teléfono *</label>
+                    <input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel" required data-i18n-placeholder="form.whatsappPh" placeholder="+54 9 261 000 0000"
+                        class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50">
+                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errWhatsapp">Necesitamos un teléfono para poder responderte.</p>
+                </div>
+
+                <div class="flex flex-col gap-1.5" data-field>
+                    <label for="f-email" data-i18n="form.email" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">Email (opcional)</label>
+                    <input id="f-email" name="email" type="email" autocomplete="email" data-i18n-placeholder="form.emailPh" placeholder="maria@bodegalosandes.com"
+                        class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50">
+                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errEmail">Revisá el formato del email.</p>
+                </div>
+
+                <!-- Trampa anti-spam: invisible para personas, tentadora para bots -->
+                <div class="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+                    <label for="f-sitio">No completar</label>
+                    <input id="f-sitio" name="sitio" type="text" tabindex="-1" autocomplete="off">
+                </div>
+
                 <button type="submit" id="form-submit-btn"
-                    class="mt-2 w-full flex items-center justify-center gap-3 px-10 py-5 bg-brand-softBlack text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed shadow-xl shadow-brand-softBlack/10">
-                    <span id="form-btn-text">Consulta gratis</span>
-                    <i data-lucide="send" id="form-btn-icon" class="w-3.5 h-3.5 stroke-[2.5]"></i>
-                    <svg id="form-btn-spinner" class="hidden animate-spin w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    class="mt-2 w-full flex items-center justify-center gap-3 px-10 py-5 bg-brand-soft-black text-white uppercase text-xs tracking-widest font-semibold hover:bg-brand-taupe transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed shadow-xl shadow-brand-soft-black/10">
+                    <span id="form-btn-text" data-i18n="form.submit">Consulta gratis</span>
+                    <svg id="form-btn-icon" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+                    <svg id="form-btn-spinner" class="hidden animate-spin w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                     </svg>
                 </button>
 
-                <!-- Mensajes de estado -->
-                <p id="form-success" class="hidden text-center text-sm font-medium text-[#5A7A3A] bg-brand-sage/40 px-6 py-4 border border-brand-sage">
-                    ¡Gracias! Te contactamos en menos de 72 horas.
-                </p>
-                <p id="form-error" class="hidden text-center text-sm font-medium text-[#8B3A3A] bg-brand-peach/40 px-6 py-4 border border-brand-peach">
-                    Hubo un error. <a href="https://wa.me/5492614708099" target="_blank" class="underline">Escribinos por WhatsApp.</a>
-                </p>
+                <div aria-live="polite" role="status">
+                    <p id="form-success" data-i18n="form.success" class="hidden text-center text-sm font-medium text-[#4A6B2A] bg-brand-sage/40 px-6 py-4 border border-brand-sage">
+                        ¡Gracias! Te contactamos en menos de 72 horas.
+                    </p>
+                    <p id="form-error" class="hidden text-center text-sm font-medium text-[#8B3A3A] bg-brand-peach/40 px-6 py-4 border border-brand-peach">
+                        <span data-i18n="form.error">Hubo un error al enviar.</span>
+                        <a href="https://wa.me/5492614708099" target="_blank" rel="noopener" data-i18n="form.errorWa" class="underline">Escribinos por WhatsApp.</a>
+                    </p>
+                </div>
             </form>
 
-            <!-- WhatsApp alternativo -->
-            <div class="mt-10 pt-8 border-t border-brand-softBlack/10 text-center">
-                <p class="text-[10px] uppercase tracking-widest font-medium text-brand-taupe mb-4">O si preferís escribir directamente</p>
-                <a href="https://wa.me/5492614708099" target="_blank" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-brand-smoke hover:text-brand-softBlack transition-colors pb-1 border-b border-brand-softBlack/20 hover:border-brand-softBlack">
-                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                    Contacto por WhatsApp
+            <div class="mt-10 pt-8 border-t border-brand-soft-black/10 text-center">
+                <p data-i18n="form.alt" class="text-[11px] uppercase tracking-widest font-medium text-brand-smoke mb-4">O si preferís escribir directamente</p>
+                <a href="https://wa.me/5492614708099" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-brand-smoke hover:text-brand-soft-black transition-colors pb-1 border-b border-brand-soft-black/20 hover:border-brand-soft-black">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+                    <span data-i18n="form.waLink">Contacto por WhatsApp</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <script>
-        (function() {
-            var WEBHOOK_URL = 'https://n8n-production-ac060.up.railway.app/webhook/hache-contacto';
-
-            var form = document.getElementById('contact-form');
-            var submitBtn = document.getElementById('form-submit-btn');
-            var btnText = document.getElementById('form-btn-text');
-            var btnIcon = document.getElementById('form-btn-icon');
-            var btnSpinner = document.getElementById('form-btn-spinner');
-            var successMsg = document.getElementById('form-success');
-            var errorMsg = document.getElementById('form-error');
-
-            function setLoading(loading) {
-                submitBtn.disabled = loading;
-                form.querySelectorAll('input').forEach(function(el) { el.disabled = loading; });
-                btnText.textContent = loading ? 'Enviando...' : 'Consulta gratis';
-                btnIcon.classList.toggle('hidden', loading);
-                btnSpinner.classList.toggle('hidden', !loading);
-            }
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                successMsg.classList.add('hidden');
-                errorMsg.classList.add('hidden');
-
-                var nombre = document.getElementById('f-nombre').value.trim();
-                var empresa = document.getElementById('f-empresa').value.trim();
-                var necesidad = document.getElementById('f-necesidad').value.trim();
-                var whatsapp = document.getElementById('f-whatsapp').value.trim();
-                var email = document.getElementById('f-email').value.trim();
-
-                if (!nombre || !empresa || !necesidad || !whatsapp || !email) return;
-
-                setLoading(true);
-
-                fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nombre: nombre, empresa: empresa, necesidad: necesidad, whatsapp: whatsapp, email: email })
-                })
-                .then(function(res) {
-                    if (!res.ok) throw new Error('Error ' + res.status);
-                    setLoading(false);
-                    form.reset();
-                    successMsg.classList.remove('hidden');
-                })
-                .catch(function() {
-                    setLoading(false);
-                    errorMsg.classList.remove('hidden');
-                });
-            });
-        })();
-    </script>
-
     <!-- FOOTER -->
-    <footer class="py-12 border-t border-brand-softBlack/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+    <footer class="py-12 border-t border-brand-soft-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
         <div>
-            <span class="font-serif text-2xl tracking-tight block">JULIA H.</span>
-            <span class="font-serif text-xs tracking-widest uppercase block">Consultora</span>
-            <p id="footer-text-1" class="text-xs text-brand-smoke font-light mt-2">© 2024 Julia Halupczok. Consultoría Estratégica.</p>
-            <p id="footer-text-2" class="text-xs text-brand-smoke font-light mt-1">Powered by <a href="http://www.rubra.ar" target="_blank" class="hover:text-brand-softBlack transition-colors underline decoration-brand-smoke/30 underline-offset-4">RUBRAlab</a></p>
+            <span class="font-serif text-2xl tracking-tight block">JULIA H</span>
+            <span data-i18n="brand.role" class="font-serif text-[11px] tracking-widest uppercase block">Consultora</span>
+            <p class="text-xs text-brand-smoke font-light mt-2">
+                © <span id="year">2026</span> Julia Halupczok. <span data-i18n="footer.tagline">Consultoría Estratégica.</span>
+            </p>
+            <p class="text-xs text-brand-smoke font-light mt-1">
+                Powered by <a href="https://www.rubra.ar" target="_blank" rel="noopener" class="hover:text-brand-soft-black transition-colors underline decoration-brand-smoke/40 underline-offset-4">RUBRAlab</a>
+            </p>
         </div>
-        
-        <div class="flex gap-8">
-            <a id="footer-link-1" href="https://www.linkedin.com/in/julia-halupczok/" target="_blank" class="text-[10px] uppercase tracking-widest font-medium text-brand-smoke hover:text-brand-softBlack transition-colors">LinkedIn</a>
-            <a id="footer-link-2" href="mailto:juliahylux@gmail.com" class="text-[10px] uppercase tracking-widest font-medium text-brand-smoke hover:text-brand-softBlack transition-colors">Email</a>
-        </div>
+
+        <nav class="flex gap-8" aria-label="Enlaces de contacto">
+            <a href="https://www.linkedin.com/in/julia-halupczok/" target="_blank" rel="noopener" class="text-[11px] uppercase tracking-widest font-medium text-brand-smoke hover:text-brand-soft-black transition-colors">LinkedIn</a>
+            <a href="mailto:juliahylux@gmail.com" class="text-[11px] uppercase tracking-widest font-medium text-brand-smoke hover:text-brand-soft-black transition-colors">Email</a>
+        </nav>
     </footer>
 
 </main>
 
-<script>
-    lucide.createIcons();
+<!-- WhatsApp flotante -->
+<a id="wa-float" href="https://wa.me/5492614708099" target="_blank" rel="noopener"
+    data-i18n-aria="a11y.waFloat" aria-label="Escribir por WhatsApp"
+    class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand-soft-black text-white flex items-center justify-center shadow-xl shadow-brand-soft-black/20 hover:bg-brand-taupe transition-all duration-300">
+    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+</a>
 
-    // Intersection Observer para disparar animaciones de scroll
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOptions = { rootMargin: "0px 0px -75px 0px" };
-
-    const revealOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, revealOptions);
-
-    revealElements.forEach(el => revealOnScroll.observe(el));
-</script>
 <script src="/lang.js"></script>
+<script type="module" src="/src/site.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 
 </body>

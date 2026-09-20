@@ -1,20 +1,67 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Julia H — sitio institucional
 
-# Run and deploy your AI Studio app
+Landing de una sola página de **Julia Halupczok**, consultora de gestión para
+pymes, bodegas y empresas familiares (Mendoza, Argentina).
 
-This contains everything you need to run your app locally.
+Producción: https://www.juliah.com.ar
 
-View your app in AI Studio: https://ai.studio/apps/bd990295-8d67-4cee-8c63-f19e0d0cf8a5
+## Stack
 
-## Run Locally
+- HTML estático + Tailwind v4 **compilado con Vite** (no CDN)
+- JavaScript vanilla, sin framework (React quedó en `package.json` pero no se usa)
+- Íconos SVG de Lucide inlineados — sin dependencia en runtime
+- Deploy en Vercel (framework detectado: `vite`)
+- Formulario de leads → webhook de n8n → Resend
 
-**Prerequisites:**  Node.js
+## Estructura
 
+| Archivo | Qué contiene |
+|---|---|
+| `index.html` | Todo el markup del sitio |
+| `src/styles.css` | Tokens de marca (`@theme`) + CSS propio. Entrada de Tailwind |
+| `src/site.js` | Comportamiento: reveals, monograma H, carrusel, formulario |
+| `public/lang.js` | Diccionario ES/EN y el switch de idioma |
+| `public/og-image.png` | Imagen de compartido, 1200×630 |
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+`src/App.tsx`, `src/main.tsx` y `src/index.css` son restos del scaffold de AI
+Studio y no se usan.
+
+## Desarrollo
+
+> [!IMPORTANT]
+> **No levantar servidores locales en este proyecto.** Los cambios se verifican
+> deployando a Vercel.
+
+```bash
+npm install
+npm run build   # compila a dist/ — sirve para validar que Tailwind generó todo
+```
+
+## Textos y traducciones
+
+Cada cadena traducible lleva un atributo en el HTML y su clave vive en
+`public/lang.js`, en **los dos idiomas**:
+
+```html
+<p data-i18n="hero.sub">Consultoría de gestión para pymes…</p>
+<input data-i18n-placeholder="form.nombrePh">
+<a data-i18n-aria="a11y.waFloat">
+<img data-i18n-alt="dir.photoAlt">
+```
+
+Si una clave falta en `en`, se muestra el español.
+
+## Variables de entorno
+
+| Variable | Dónde | Para qué |
+|---|---|---|
+| `VITE_N8N_WEBHOOK_URL` | `.env.local` y Vercel → Production | Endpoint del formulario de leads |
+
+Si la variable no está definida, `src/site.js` cae al webhook de producción
+hardcodeado, así que el formulario nunca queda muerto.
+
+## Assets de marca
+
+`og-image.png`, `favicon.ico`, `favicon.svg` y `apple-touch-icon.png` se generan
+con el script `scripts/gen-brand.py` (requiere `pillow` y las tipografías
+Playfair Display e Inter). Correrlo solo si cambia la identidad.
