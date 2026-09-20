@@ -376,35 +376,35 @@
                     <label for="f-nombre" data-i18n="form.nombre" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">Nombre completo *</label>
                     <input id="f-nombre" name="nombre" type="text" autocomplete="name" required data-i18n-placeholder="form.nombrePh" placeholder="María Pérez"
                         class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50">
-                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errNombre">Contanos tu nombre.</p>
+                    <p class="field-error text-xs text-brand-error" data-i18n="form.errNombre">Contanos tu nombre.</p>
                 </div>
 
                 <div class="flex flex-col gap-1.5" data-field>
                     <label for="f-empresa" data-i18n="form.empresa" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">Empresa / Negocio *</label>
                     <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required data-i18n-placeholder="form.empresaPh" placeholder="Bodega Los Andes"
                         class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50">
-                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errEmpresa">Contanos de qué empresa nos escribís.</p>
+                    <p class="field-error text-xs text-brand-error" data-i18n="form.errEmpresa">Contanos de qué empresa nos escribís.</p>
                 </div>
 
                 <div class="flex flex-col gap-1.5" data-field>
                     <label for="f-necesidad" data-i18n="form.necesidad" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">¿Cuál es tu principal necesidad hoy? *</label>
                     <textarea id="f-necesidad" name="necesidad" rows="4" required data-i18n-placeholder="form.necesidadPh" placeholder="Organizar los procesos internos del equipo"
                         class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50 resize-y"></textarea>
-                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errNecesidad">Contanos brevemente qué necesitás.</p>
+                    <p class="field-error text-xs text-brand-error" data-i18n="form.errNecesidad">Contanos brevemente qué necesitás.</p>
                 </div>
 
                 <div class="flex flex-col gap-1.5" data-field>
                     <label for="f-whatsapp" data-i18n="form.whatsapp" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">WhatsApp o teléfono *</label>
                     <input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel" required data-i18n-placeholder="form.whatsappPh" placeholder="+54 9 261 000 0000"
                         class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50">
-                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errWhatsapp">Necesitamos un teléfono para poder responderte.</p>
+                    <p class="field-error text-xs text-brand-error" data-i18n="form.errWhatsapp">Necesitamos un teléfono para poder responderte.</p>
                 </div>
 
                 <div class="flex flex-col gap-1.5" data-field>
                     <label for="f-email" data-i18n="form.email" class="text-[11px] uppercase tracking-widest font-semibold text-brand-smoke">Email (opcional)</label>
                     <input id="f-email" name="email" type="email" autocomplete="email" data-i18n-placeholder="form.emailPh" placeholder="maria@bodegalosandes.com"
                         class="w-full bg-white/40 border border-brand-soft-black/20 focus:border-brand-soft-black px-4 py-3.5 text-base outline-none transition-colors placeholder:text-brand-taupe/70 disabled:opacity-50">
-                    <p class="field-error text-xs text-[#8B3A3A]" data-i18n="form.errEmail">Revisá el formato del email.</p>
+                    <p class="field-error text-xs text-brand-error" data-i18n="form.errEmail">Revisá el formato del email.</p>
                 </div>
 
                 <!-- Trampa anti-spam: invisible para personas, tentadora para bots -->
@@ -424,10 +424,10 @@
                 </button>
 
                 <div aria-live="polite" role="status">
-                    <p id="form-success" data-i18n="form.success" class="hidden text-center text-sm font-medium text-[#4A6B2A] bg-brand-sage/40 px-6 py-4 border border-brand-sage">
+                    <p id="form-success" data-i18n="form.success" class="hidden text-center text-sm font-medium text-brand-success bg-brand-sage/40 px-6 py-4 border border-brand-sage">
                         ¡Gracias! Te contactamos en menos de 72 horas.
                     </p>
-                    <p id="form-error" class="hidden text-center text-sm font-medium text-[#8B3A3A] bg-brand-peach/40 px-6 py-4 border border-brand-peach">
+                    <p id="form-error" class="hidden text-center text-sm font-medium text-brand-error bg-brand-peach/40 px-6 py-4 border border-brand-peach">
                         <span data-i18n="form.error">Hubo un error al enviar.</span>
                         <a href="https://wa.me/5492614708099" target="_blank" rel="noopener" data-i18n="form.errorWa" class="underline">Escribinos por WhatsApp.</a>
                     </p>

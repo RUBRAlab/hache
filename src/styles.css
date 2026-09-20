@@ -28,6 +28,10 @@
   --color-brand-ink-peach: #8c5647;
   --color-brand-ink-sage: #5e6738;
   --color-brand-ink-mint: #5c6a3d;
+
+  /* Estados del formulario. */
+  --color-brand-success: #4a6b2a;
+  --color-brand-error: #8b3a3a;
 }
 
 @layer base {
@@ -323,7 +327,7 @@
 }
 [data-invalid="true"] input,
 [data-invalid="true"] textarea {
-  border-color: #8b3a3a;
+  border-color: var(--color-brand-error);
 }
 
 /* ------------------------------------------------- respeto por reduced-motion */

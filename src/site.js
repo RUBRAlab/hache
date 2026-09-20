@@ -29,6 +29,10 @@ if (header) {
  * determinístico y no se puede saltear nada. */
 let pendientes = [...document.querySelectorAll('.reveal')];
 
+/* Sin throttle de requestAnimationFrame a propósito: en una pestaña en segundo
+ * plano rAF no corre, y cualquier flag de "ya pedí un frame" queda trabado y
+ * mata los reveals para el resto de la sesión. Son 20 rects como mucho y la
+ * lista se vacía enseguida. */
 function barrerReveals() {
   pendientes = pendientes.filter((el) => {
     if (el.getBoundingClientRect().top >= window.innerHeight - 75) return true;
@@ -36,19 +40,9 @@ function barrerReveals() {
     return false;
   });
   if (!pendientes.length) {
-    removeEventListener('scroll', alHacerScroll);
+    removeEventListener('scroll', barrerReveals);
     removeEventListener('resize', barrerReveals);
   }
-}
-
-let esperandoFrame = false;
-function alHacerScroll() {
-  if (esperandoFrame) return;
-  esperandoFrame = true;
-  requestAnimationFrame(() => {
-    esperandoFrame = false;
-    barrerReveals();
-  });
 }
 
 if (prefersReducedMotion) {
@@ -56,7 +50,7 @@ if (prefersReducedMotion) {
   pendientes = [];
 } else {
   barrerReveals();
-  addEventListener('scroll', alHacerScroll, { passive: true });
+  addEventListener('scroll', barrerReveals, { passive: true });
   addEventListener('resize', barrerReveals);
 }
 
