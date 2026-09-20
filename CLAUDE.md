@@ -17,7 +17,9 @@ como nombre. Si aparece "HACHE" en un título, meta o schema, es un residuo.
 - `src/site.js` — reveals, monograma H, carrusel, formulario
 - `public/lang.js` — diccionario ES/EN
 - `scripts/gen-brand.py` — genera og-image e iconos
-- `src/App.tsx`, `src/main.tsx`, `src/index.css` — restos del scaffold, sin uso
+
+Las únicas dependencias son `vite`, `tailwindcss` y `@tailwindcss/vite`. No hay
+script `dev` a propósito: acá no se levantan servidores locales.
 
 ## Convenciones
 - **Textos: nunca hardcodear una cadena visible.** Va con `data-i18n="clave"` en

@@ -8,10 +8,13 @@ Producción: https://www.juliah.com.ar
 ## Stack
 
 - HTML estático + Tailwind v4 **compilado con Vite** (no CDN)
-- JavaScript vanilla, sin framework (React quedó en `package.json` pero no se usa)
+- JavaScript vanilla, sin framework
 - Íconos SVG de Lucide inlineados — sin dependencia en runtime
 - Deploy en Vercel (framework detectado: `vite`)
 - Formulario de leads → webhook de n8n → Resend
+
+Las únicas dependencias son `vite`, `tailwindcss` y `@tailwindcss/vite`.
+Si estás por agregar una, fijate primero si hace falta.
 
 ## Estructura
 
@@ -23,14 +26,11 @@ Producción: https://www.juliah.com.ar
 | `public/lang.js` | Diccionario ES/EN y el switch de idioma |
 | `public/og-image.png` | Imagen de compartido, 1200×630 |
 
-`src/App.tsx`, `src/main.tsx` y `src/index.css` son restos del scaffold de AI
-Studio y no se usan.
-
 ## Desarrollo
 
 > [!IMPORTANT]
 > **No levantar servidores locales en este proyecto.** Los cambios se verifican
-> deployando a Vercel.
+> deployando a Vercel. No hay script `dev` a propósito.
 
 ```bash
 npm install
