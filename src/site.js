@@ -245,6 +245,9 @@ if (form) {
         necesidad: document.getElementById('f-necesidad').value.trim(),
         whatsapp: document.getElementById('f-whatsapp').value.trim(),
         email: document.getElementById('f-email').value.trim(),
+        // Honeypot: viaja vacío desde el form real. El nodo IF del workflow
+        // descarta el envío si llega con valor.
+        sitio: honeypot.value,
       }),
     })
       .then((res) => {
