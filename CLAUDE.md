@@ -9,7 +9,7 @@ como nombre. Si aparece "HACHE" en un título, meta o schema, es un residuo.
 - JavaScript vanilla, sin framework
 - Íconos SVG de Lucide **inlineados** en el HTML — no hay dependencia en runtime
 - Vercel (deploy, framework `vite`)
-- n8n (webhook de leads) + Resend (email)
+- Función de Vercel `api/contacto.js` + Resend (email)
 
 ## Archivos
 - `index.html` — todo el markup
@@ -52,15 +52,17 @@ Campos: nombre, empresa, necesidad (textarea), whatsapp — **requeridos**;
 email — **opcional**.
 Validación por campo con mensaje propio, `aria-invalid` y foco al primer error.
 Anti-spam: honeypot (`sitio`) + descarte de envíos en menos de 2,5 s.
-Submit: POST JSON a `VITE_N8N_WEBHOOK_URL`.
-Body: `{ nombre, empresa, necesidad, whatsapp, email }` — `email` puede venir
-vacío, el workflow de n8n tiene que tolerarlo.
+Submit: POST JSON a `/api/contacto`.
+Body: `{ nombre, empresa, necesidad, whatsapp, email, sitio }` — `email` puede venir
+vacío; `sitio` es el honeypot.
 
-## Webhook n8n
-URL: `https://n8n-production-ac060.up.railway.app/webhook/hache-contacto`
-Variable: `VITE_N8N_WEBHOOK_URL` en `.env.local` y en Vercel → Production.
-Al ser `src/site.js` un módulo real, Vite sí reemplaza `import.meta.env`; el
-webhook hardcodeado quedó solo como fallback.
+## Formulario → Vercel → Resend
+Desde el 22/10/2026 el formulario ya no pasa por n8n (incidente de seguridad de
+Railway). `api/contacto.js` valida igual que el viejo workflow (campos requeridos,
+WhatsApp con 8+ dígitos, honeypot vacío) y manda el mail por la API de Resend.
+Variables en Vercel: `RESEND_API_KEY` (key `hache-web`, solo envío) en Production
+y Preview; `CONTACT_TO` solo en Preview (`hola@rubra.ar`, para probar sin
+molestar a Julia).
 
 ## Email
 - Destinatario de leads: juliahylux@gmail.com

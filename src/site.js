@@ -1,8 +1,6 @@
 /* Comportamiento del sitio de Julia H. Sin dependencias. */
 
-const WEBHOOK_URL =
-  import.meta.env.VITE_N8N_WEBHOOK_URL ||
-  'https://n8n-production-ac060.up.railway.app/webhook/hache-contacto';
+const WEBHOOK_URL = '/api/contacto';
 
 const prefersReducedMotion = window.matchMedia(
   '(prefers-reduced-motion: reduce)',
@@ -245,7 +243,7 @@ if (form) {
         necesidad: document.getElementById('f-necesidad').value.trim(),
         whatsapp: document.getElementById('f-whatsapp').value.trim(),
         email: document.getElementById('f-email').value.trim(),
-        // Honeypot: viaja vacío desde el form real. El nodo IF del workflow
+        // Honeypot: viaja vacío desde el form real. api/contacto.js
         // descarta el envío si llega con valor.
         sitio: honeypot.value,
       }),

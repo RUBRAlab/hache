@@ -55,7 +55,8 @@ Si una clave falta en `en`, se muestra el español.
 
 | Variable | Dónde | Para qué |
 |---|---|---|
-| `VITE_N8N_WEBHOOK_URL` | `.env.local` y Vercel → Production | Endpoint del formulario de leads |
+| `RESEND_API_KEY` | Vercel → Production y Preview | Key de Resend (`hache-web`) que usa `api/contacto.js` |
+| `CONTACT_TO` | Vercel → Preview | Pisa el destinatario en las pruebas (`hola@rubra.ar`) |
 
 Si la variable no está definida, `src/site.js` cae al webhook de producción
 hardcodeado, así que el formulario nunca queda muerto.
